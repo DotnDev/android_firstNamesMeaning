@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/nav_gifts_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_balance_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/nav_balance_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/nav_mygrids_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_gifts_txtview" />
+
+    <TextView
+        android:id="@+id/nav_mygrids_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/nav_winners_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_balance_txtview" />
+
+    <TextView
+        android:id="@+id/nav_winners_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/nav_settings_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_mygrids_txtview" />
+
+
+    <TextView
+        android:id="@+id/nav_settings_txtview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_winners_txtview" />
+
+    <ImageView
+        android:id="@+id/nav_flag_fr_imgview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:gravity="end"
+        android:maxWidth="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
+        app:layout_constraintEnd_toStartOf="@+id/nav_flag_en_imgview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
+
+    <ImageView
+        android:id="@+id/nav_flag_en_imgview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
+
+    <ImageView
+        android:id="@+id/nav_flag_de_imgview"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="109dp"
+        android:layout_marginBottom="20dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nav_flag_en_imgview"
+        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
+
+    <TextView
+        android:id="@+id/nav_rules_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        app:layout_constraintBottom_toTopOf="@+id/nav_help_txtview"
+        app:layout_constraintEnd_toEndOf="@+id/nav_flag_de_imgview"
+        app:layout_constraintTop_toBottomOf="@id/nav_flag_de_imgview" />
+
+    <TextView
+        android:id="@+id/nav_help_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/nav_rules_txtview"
+        app:layout_constraintBottom_toTopOf="@+id/nav_rgpd_txtview"
+        app:layout_constraintEnd_toEndOf="@+id/nav_rules_txtview" />
+
+    <TextView
+        android:id="@+id/nav_rgpd_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/nav_help_txtview"
+        app:layout_constraintBottom_toTopOf="@+id/nav_legal_txtview"
+        app:layout_constraintEnd_toEndOf="@+id/nav_help_txtview" />
+
+    <TextView
+        android:id="@+id/nav_legal_txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="end"
+        app:layout_constraintTop_toBottomOf="@id/nav_rgpd_txtview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_rgpd_txtview" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
