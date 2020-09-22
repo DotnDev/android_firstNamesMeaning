@@ -4,137 +4,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:id="@+id/nav_gifts_txtview"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/nav_logo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_balance_txtview"
+        android:src="@drawable/logo"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:layout_margin="10dp"
+        android:contentDescription="@string/app_logo_alt"
+        app:layout_constraintBottom_toTopOf="@+id/nav_compatibility_txtView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        />
+
+    <!-- drawableSTart -->
 
     <TextView
-        android:id="@+id/nav_balance_txtview"
+        android:id="@+id/nav_compatibility_txtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/nav_mygrids_txtview"
+        android:layout_margin="10dp"
+        android:text="@string/category_compatibility"
+        app:layout_constraintBottom_toTopOf="@+id/nav_horoscope_txtView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_gifts_txtview" />
+        app:layout_constraintTop_toBottomOf="@id/nav_logo"
+        />
 
     <TextView
-        android:id="@+id/nav_mygrids_txtview"
+        android:id="@+id/nav_horoscope_txtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/nav_winners_txtview"
+        android:layout_margin="10dp"
+        android:text="@string/category_horoscope"
+        app:layout_constraintBottom_toTopOf="@+id/nav_ranking_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_balance_txtview" />
+        app:layout_constraintTop_toBottomOf="@+id/nav_compatibility_txtView" />
 
     <TextView
-        android:id="@+id/nav_winners_txtview"
+        android:id="@+id/nav_ranking_txtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/nav_settings_txtview"
+        android:layout_margin="10dp"
+        android:text="@string/category_ranking"
+        app:layout_constraintBottom_toTopOf="@+id/nav_numbers_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_mygrids_txtview" />
-
+        app:layout_constraintTop_toBottomOf="@+id/nav_horoscope_txtView" />
 
     <TextView
-        android:id="@+id/nav_settings_txtview"
+        android:id="@+id/nav_numbers_txtView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/category_numbers"
+        app:layout_constraintBottom_toTopOf="@+id/nav_life_path_txtView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_winners_txtview" />
+        app:layout_constraintTop_toBottomOf="@+id/nav_ranking_txtView" />
 
-    <ImageView
-        android:id="@+id/nav_flag_fr_imgview"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginBottom="20dp"
-        android:adjustViewBounds="true"
-        android:gravity="end"
-        android:maxWidth="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
-        app:layout_constraintEnd_toStartOf="@+id/nav_flag_en_imgview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
 
-    <ImageView
-        android:id="@+id/nav_flag_en_imgview"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="20dp"
-        android:adjustViewBounds="true"
-        android:maxWidth="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
+    <TextView
+        android:id="@+id/nav_life_path_txtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/category_life_path"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
+        app:layout_constraintTop_toBottomOf="@+id/nav_numbers_txtView" />
 
-    <ImageView
-        android:id="@+id/nav_flag_de_imgview"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="109dp"
-        android:layout_marginBottom="20dp"
-        android:adjustViewBounds="true"
-        android:maxWidth="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_rules_txtview"
+
+    <TextView
+        android:id="@+id/nav_birth_day_txtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/category_birth_day"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/nav_flag_en_imgview"
-        app:layout_constraintTop_toBottomOf="@+id/nav_settings_txtview" />
-
-    <TextView
-        android:id="@+id/nav_rules_txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="end"
-        app:layout_constraintBottom_toTopOf="@+id/nav_help_txtview"
-        app:layout_constraintEnd_toEndOf="@+id/nav_flag_de_imgview"
-        app:layout_constraintTop_toBottomOf="@id/nav_flag_de_imgview" />
-
-    <TextView
-        android:id="@+id/nav_help_txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="end"
-        app:layout_constraintTop_toBottomOf="@id/nav_rules_txtview"
-        app:layout_constraintBottom_toTopOf="@+id/nav_rgpd_txtview"
-        app:layout_constraintEnd_toEndOf="@+id/nav_rules_txtview" />
-
-    <TextView
-        android:id="@+id/nav_rgpd_txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="end"
-        app:layout_constraintTop_toBottomOf="@id/nav_help_txtview"
-        app:layout_constraintBottom_toTopOf="@+id/nav_legal_txtview"
-        app:layout_constraintEnd_toEndOf="@+id/nav_help_txtview" />
-
-    <TextView
-        android:id="@+id/nav_legal_txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:gravity="end"
-        app:layout_constraintTop_toBottomOf="@id/nav_rgpd_txtview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nav_rgpd_txtview" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_life_path_txtView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
