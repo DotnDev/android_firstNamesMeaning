@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">First Names Meanings</string>
+
+    <!-- HOME -->
+    <string name="home_intro_title">Choosing a name is choosing a fate!</string>
+    <string name="home_intro_txt">Your first name can say a lot about your fate… What character traits are bound to it? What job will make a success of you? What influence will have your first name in your choices? Welcome in the universe of the first names and their meaning…</string>
+    <string name="home_search_placeholder">Search a name…</string>
+
+    <!-- CATEGORIES -->
+    <string name="category_compatibility">Compatibility</string>
+    <string name="category_horoscope">Horoscope</string>
+    <string name="category_ranking">Ranking</string>
+    <string name="category_numbers">Numbers</string>
+    <string name="category_birth_day">Birth Day</string>
+    <string name="category_life_path">Life Path</string>
+    <string name="category_names">First Names</string>
+
+
+    <!-- NAME DAY -->
+    <string name="widget_name_day_title">One day, One name…</string>
+    <string name="widget_name_day_date">INSERT DATE HERE</string>
+    <string name="widget_name_day_name">Today is…</string>
+
+
+    <!-- HOROSCOPE -->
+    <string name="widget_horoscope_title">Daily Horoscope</string>
+    <string name="widget_horoscope_text">To search your horoscope, enter your first name below:
+To subscribe to our daily horoscope newsletter, enter your email as well!</string>
+    <string name="widget_horoscope_input_name">Your First Name</string>
+    <string name="widget_horoscope_input_email">Your Email Address</string>
+    <string name="widget_horoscope_consent">I agree to receive my horoscope newsletter daily. No-spam policy guaranteed.</string>
+    <string name="widget_horoscope_btn">Get my horoscope</string>
+    <string name="widget_horoscope_compulsory">* Compulsory fields</string>
+
 </resources>
