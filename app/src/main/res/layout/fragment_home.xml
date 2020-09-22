@@ -158,6 +158,7 @@
                 android:src="@drawable/card"
                 android:adjustViewBounds="true"
                 android:maxWidth="100dp"
+                android:contentDescription="@string/app_card_alt"
                 />
 
         <TextView
@@ -208,6 +209,7 @@
                 android:src="@drawable/card"
                 android:adjustViewBounds="true"
                 android:maxWidth="100dp"
+                android:contentDescription="@string/app_card_alt"
                 />
 
             <TextView
@@ -255,6 +257,7 @@
                 android:src="@drawable/card"
                 android:adjustViewBounds="true"
                 android:maxWidth="100dp"
+                android:contentDescription="@string/app_card_alt"
                 />
 
             <TextView
