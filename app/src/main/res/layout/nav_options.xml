@@ -13,7 +13,7 @@
         android:maxWidth="100dp"
         android:maxHeight="100dp"
         android:layout_margin="10dp"
-        android:contentDescription="@string/app_logo_alt"
+        android:contentDescription="@string/logo_alt"
         app:layout_constraintBottom_toTopOf="@+id/nav_compatibility_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
