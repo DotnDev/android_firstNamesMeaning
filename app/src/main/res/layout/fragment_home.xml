@@ -5,41 +5,132 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    style="?android:buttonBarButtonStyle"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background"
-        android:scaleType="center"
-        />
-
-    <LinearLayout
-        android:id="@+id/home_introduction_ll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/home_cards_ll"
-        >
-
-    <TextView
-        android:id="@+id/home_introduction_txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
-
-        <TextView
-            android:id="@+id/home_nameDay_txtView"
+        <LinearLayout
+            android:id="@+id/home_introduction_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toTopOf="@id/home_CTAs_ll"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <TextView
+                android:id="@+id/home_introduction_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_intro_title"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_title"
+                />
+
+            <TextView
+                android:id="@+id/home_introduction_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_intro_txt"
+                android:textColor="@color/black"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_CTAs_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            app:layout_constraintBottom_toTopOf="@id/home_cards_ll"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <Button
+                android:id="@+id/home_compatibility_btn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                android:text="@string/category_compatibility"
+                android:textSize="@dimen/text_size_minimum"
+                android:background="@drawable/border"
+                android:textColor="@color/white"
+                style="?android:buttonBarButtonStyle"
+                />
+
+            <Button
+                android:id="@+id/home_horoscope_btn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:padding="5dp"
+                android:text="@string/category_horoscope"
+                android:textSize="@dimen/text_size_minimum"
+                android:background="@drawable/border"
+                android:textColor="@color/white"
+                style="?android:buttonBarButtonStyle"
+                />
+
+            <Button
+                android:id="@+id/home_ranking_btn"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/category_ranking"
+                android:textSize="@dimen/text_size_minimum"
+                android:background="@drawable/border"
+                android:textColor="@color/white"
+                style="?android:buttonBarButtonStyle"
+                />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/home_nameDay_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/home_cards_ll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_CTAs_ll"
+        >
+
+        <TextView
+            android:id="@+id/home_nameDay_title_txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_title"
+            android:text="@string/widget_name_day_title"
+            />
+        <TextView
+            android:id="@+id/home_nameDay_date_txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_name_day_date"
+            android:textColor="@color/black"
             />
 
+        <TextView
+            android:id="@+id/home_nameDay_name_txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/widget_name_day_name"
+            android:textColor="@color/black"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -51,29 +142,106 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_introduction_ll"
-        >
+        app:layout_constraintTop_toBottomOf="@id/home_nameDay_ll">
 
-    <TextView
-        android:id="@+id/home_card1_txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
-
-        <TextView
-            android:id="@+id/home_card2_txtView"
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            />
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            >
+
+            <ImageView
+                android:id="@+id/home_card1_imgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/card"
+                android:adjustViewBounds="true"
+                android:maxWidth="100dp"
+                />
 
         <TextView
-            android:id="@+id/home_card3_txtView"
+            android:id="@+id/home_card1_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:layout_alignStart="@id/home_card1_imgView"
+            android:layout_alignLeft="@id/home_card1_imgView"
+            android:layout_alignTop="@id/home_card1_imgView"
+            android:layout_alignEnd="@id/home_card1_imgView"
+            android:layout_alignRight="@id/home_card1_imgView"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="@string/category_numbers"
+            android:textColor="@color/white"
             />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/home_card2_imgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/card"
+                android:adjustViewBounds="true"
+                android:maxWidth="100dp"
+                />
+
+            <TextView
+                android:id="@+id/home_card2_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/home_card2_imgView"
+                android:layout_alignLeft="@id/home_card2_imgView"
+                android:layout_alignTop="@id/home_card2_imgView"
+                android:layout_alignEnd="@id/home_card2_imgView"
+                android:layout_alignRight="@id/home_card2_imgView"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="@string/category_birth_day"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/home_card3_imgView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/card"
+                android:adjustViewBounds="true"
+                android:maxWidth="100dp"
+                />
+
+            <TextView
+                android:id="@+id/home_card3_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/home_card3_imgView"
+                android:layout_alignLeft="@id/home_card3_imgView"
+                android:layout_alignTop="@id/home_card3_imgView"
+                android:layout_alignEnd="@id/home_card3_imgView"
+                android:layout_alignRight="@id/home_card3_imgView"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:text="@string/category_life_path"
+                android:textColor="@color/white"
+                />
+
+        </RelativeLayout>
 
     </LinearLayout>
 

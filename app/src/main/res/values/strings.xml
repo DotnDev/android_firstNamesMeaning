@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">First Names Meanings</string>
     <string name="app_logo_alt">First Names Meanings Logo</string>
+    <string name="app_background_alt">First Names Meanings Background</string>
 
     <!-- HOME -->
     <string name="home_intro_title">Choosing a name is choosing a fate!</string>

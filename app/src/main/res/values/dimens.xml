@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">100dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="profile_width">75dp</dimen>
+    <dimen name="profile_height">75dp</dimen>
+
+    <dimen name="text_title">28sp</dimen>
+
+
+    <!-- Margins -->
+
+
+    <!-- Padding -->
+    <dimen name="padding_regular">30dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_size_regular">18sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_minimum">12sp</dimen>
+
+
+    <!-- Button sizes -->
+    <dimen name="grid_btn_height">60dp</dimen>
+    <dimen name="grid_btn_width">300dp</dimen>
+
+    <!-- ...............
+
+        NORMAL
+
+     ....................-->
+    <!-- Image sizes  -->
+    <dimen name="normal_logo_max">20dp</dimen>
+    <dimen name="normal_symbol_max">35dp</dimen>
+
+    <dimen name="normal_home_circle_width">150dp</dimen>
+
+
+    <dimen name="normal_img_jackpot_max">200dp</dimen>
+
+    <dimen name="normal_ic_euro_max">25dp</dimen>
+    <dimen name="normal_ic_arrow_max">18dp</dimen>
+    <dimen name="normal_ic_grid_max">25dp</dimen>
+    <dimen name="normal_ic_plus_max">18dp</dimen>
+
+
+    <dimen name="normal_padding_small">10dp</dimen>
+    <dimen name="normal_padding_regular">15dp</dimen>
+
+
+    <dimen name="normal_margin_small">10dp</dimen>
+    <dimen name="normal_margin_symbols">2dp</dimen>
+    <dimen name="normal_margin_regular">20dp</dimen>
+    <dimen name="normal_margin_large">40dp</dimen>
+    <dimen name="normal_margin_large_variation">35dp</dimen>
+
+
+    <dimen name="normal_width_play_btn">300dp</dimen>
+    <dimen name="normal_height_play_btn">50dp</dimen>
+
+    <dimen name="normal_textsize_menu">16sp</dimen>
+    <dimen name="normal_textsize">20sp</dimen>
+    <dimen name="normal_textsize_title">20sp</dimen>
+
+
+    <!-- ...............
+
+        SMALL
+
+     ....................-->
+
+    <!-- Image sizes -->
+    <dimen name="small_login_logo_maxwidth">80dp</dimen>
+
+    <dimen name="small_icon">10dp</dimen>
+
+
+    <dimen name="small_btn_maxheight">40dp</dimen>
+    <dimen name="small_btn_maxwidth">80dp</dimen>
+
+
+    <dimen name="small_textsize">10sp</dimen>
+
+    <dimen name="small_margin">2dp</dimen>
+
+
+    <!-- ...............
+
+        LARGE
+
+     ....................-->
+
+    <dimen name="large_btn_maxwidth">200dp</dimen>
+    <dimen name="large_btn_maxheight">60dp</dimen>
+
+    <dimen name="large_textsize">20sp</dimen>
+
+    <dimen name="large_margin">40dp</dimen>
+
+    <!-- ...............
+
+         XLARGE
+
+    ....................-->
+
+    <dimen name="xlarge_btn_maxwidth">400dp</dimen>
+    <dimen name="xlarge_btn_maxheight">120dp</dimen>
+
+    <dimen name="xlarge_textsize">40sp</dimen>
+
+    <!-- ...............
+
+            LANDSCAPE
+
+    /....................-->
+
+    <!-- Image sizes -->
+    <dimen name="landscape_login_logo_maxwidth">300dp</dimen>
+    <dimen name="landscape_login_logo_maxheight">100dp</dimen>
+
+
+</resources>
