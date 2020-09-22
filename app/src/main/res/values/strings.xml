@@ -8,6 +8,10 @@
     <string name="home_intro_txt">Your first name can say a lot about your fate… What character traits are bound to it? What job will make a success of you? What influence will have your first name in your choices? Welcome in the universe of the first names and their meaning…</string>
     <string name="home_search_placeholder">Search a name…</string>
 
+    <string name="home_card1_txt">Numbers and their meanings</string>
+    <string name="home_card2_txt">Learn about your Birth Day</string>
+    <string name="home_card3_txt">Calculate your Life Path</string>
+
     <!-- CATEGORIES -->
     <string name="category_compatibility">Compatibility</string>
     <string name="category_horoscope">Horoscope</string>
@@ -33,5 +37,9 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_consent">I agree to receive my horoscope newsletter daily. No-spam policy guaranteed.</string>
     <string name="widget_horoscope_btn">Get my horoscope</string>
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
+
+
+    <!-- CTAs TEXT -->
+    <string name="cta_read_more">Read More</string>
 
 </resources>
