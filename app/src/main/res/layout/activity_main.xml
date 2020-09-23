@@ -5,7 +5,6 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -25,8 +24,15 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/frame" />
+            android:id="@+id/frame" >
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background"
+            android:scaleType="center"
+            />
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -38,7 +44,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true">
 
-            <include layout="@layout/nav_options" />
+        <include layout="@layout/nav_options" />
 
     </com.google.android.material.navigation.NavigationView>
 
