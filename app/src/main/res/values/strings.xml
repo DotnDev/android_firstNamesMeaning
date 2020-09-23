@@ -51,6 +51,24 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_btn">Get my horoscope</string>
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
 
+    <!-- FIRST NAME DESCRIPTION -->
+    <string name="name_gender_title">Gender</string>
+    <string name="name_numbers_title">Numbers</string>
+    <string name="name_nameDay_title">Name Day</string>
+    <string name="name_origin_title">Origin</string>
+    <string name="name_etymology_title">Etymology</string>
+
+    <string name="name_description_be_title_f">Who is she?</string>
+    <string name="name_description_do_title_f">What does she like?</string>
+    <string name="name_description_love_title_f">What does she do?</string>
+
+    <string name="name_description_be_title_m">Who is he?</string>
+    <string name="name_description_do_title_m">What does he like?</string>
+    <string name="name_description_love_title_m">What does he do?</string>
+
+    <string name="name_description_be_title_p">Who are they?</string>
+    <string name="name_description_do_title_p">What do they like?</string>
+    <string name="name_description_love_title_p">What do they do?</string>
 
     <!-- CTAs TEXT -->
     <string name="cta_read_more">Read More</string>

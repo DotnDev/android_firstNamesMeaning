@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="?android:buttonBarButtonStyle"
+    >
+
+   <TextView
+       android:id="@+id/name_name_txtView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
+       />
+
+    <TextView
+        android:id="@+id/name_gender_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
+        android:text="@string/name_gender_title"
+        />
+
+    <TextView
+        android:id="@+id/name_gender_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_gender_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_numbers_title_txtView"
+        />
+
+    <TextView
+        android:id="@+id/name_numbers_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_gender_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_numbers_txtView"
+        android:text="@string/name_numbers_title"
+        />
+
+    <TextView
+        android:id="@+id/name_numbers_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_numbers_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_nameDay_title_txtView"
+        />
+
+    <TextView
+        android:id="@+id/name_nameDay_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_numbers_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_nameDay_txtView"
+        android:text="@string/name_nameDay_title"
+
+        />
+
+    <TextView
+        android:id="@+id/name_nameDay_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_nameDay_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_origin_title_txtView"
+        />
+
+    <TextView
+        android:id="@+id/name_origin_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_nameDay_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_origin_txtView"
+        android:text="@string/name_origin_title"
+        />
+
+    <TextView
+        android:id="@+id/name_origin_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_origin_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_etymology_title_txtView"
+        />
+
+    <TextView
+        android:id="@+id/name_etymology_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_origin_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_etymology_txtView"
+        android:text="@string/name_etymology_title"
+        />
+
+    <TextView
+        android:id="@+id/name_etymology_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView"
+        app:layout_constraintBottom_toTopOf=""
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
