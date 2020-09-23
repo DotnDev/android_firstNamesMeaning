@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent">
 
     <ImageView
@@ -10,9 +11,9 @@
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         android:adjustViewBounds="true"
-        android:maxWidth="100dp"
+        android:maxWidth="150dp"
         android:maxHeight="100dp"
-        android:layout_margin="10dp"
+        android:layout_margin="30dp"
         android:contentDescription="@string/logo_alt"
         app:layout_constraintBottom_toTopOf="@+id/nav_compatibility_txtView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_compatibility"
+        android:textSize="@dimen/large_textsize"
         app:layout_constraintBottom_toTopOf="@+id/nav_horoscope_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_horoscope"
+        android:textSize="@dimen/large_textsize"
         app:layout_constraintBottom_toTopOf="@+id/nav_ranking_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_ranking"
+        android:textSize="@dimen/large_textsize"
         app:layout_constraintBottom_toTopOf="@+id/nav_numbers_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_numbers"
+        android:textSize="@dimen/large_textsize"
         app:layout_constraintBottom_toTopOf="@+id/nav_life_path_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_life_path"
+        android:textSize="@dimen/large_textsize"
+        app:layout_constraintBottom_toTopOf="@+id/nav_birth_day_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_numbers_txtView" />
@@ -87,8 +94,48 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/category_birth_day"
+        android:textSize="@dimen/large_textsize"
+        app:layout_constraintBottom_toTopOf="nav_help_txtview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_life_path_txtView" />
+
+
+    <TextView
+        android:id="@+id/nav_help_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        android:text="@string/navigation_help"
+        app:layout_constraintTop_toBottomOf="@id/nav_birth_day_txtView"
+        app:layout_constraintBottom_toTopOf="@+id/nav_rgpd_txtView"
+        app:layout_constraintEnd_toEndOf="@+id/nav_birth_day_txtView"
+
+        />
+
+    <TextView
+        android:id="@+id/nav_rgpd_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="end"
+        android:text="@string/navigation_RGPD"
+        app:layout_constraintTop_toBottomOf="@id/nav_help_txtView"
+        app:layout_constraintBottom_toTopOf="@+id/nav_legal_txtView"
+        app:layout_constraintEnd_toEndOf="@+id/nav_help_txtView"
+        />
+
+    <TextView
+        android:id="@+id/nav_legal_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="end"
+        android:text="@string/navigation_legal"
+        app:layout_constraintTop_toBottomOf="@id/nav_rgpd_txtView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nav_rgpd_txtView"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

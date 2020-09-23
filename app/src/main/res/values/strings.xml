@@ -16,6 +16,10 @@
 
     <!-- NAV -->
 
+    <string name="navigation_help">Help</string>
+    <string name="navigation_RGPD">RGPD</string>
+    <string name="navigation_legal">Legal</string>
+
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="openDrawer" translatable="false">open_drawer</string>
