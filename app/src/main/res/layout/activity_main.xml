@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -15,18 +16,16 @@
         android:orientation="vertical"
         >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/background"
-            android:scaleType="center"
-            />
-
         <include
             layout="@layout/app_bar_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame" />
 
 
     </LinearLayout>

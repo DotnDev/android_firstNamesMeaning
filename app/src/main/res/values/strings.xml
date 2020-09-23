@@ -9,10 +9,17 @@
     <string name="home_intro_title">Choosing a name is choosing a fate!</string>
     <string name="home_intro_txt">Your first name can say a lot about your fate… What character traits are bound to it? What job will make a success of you? What influence will have your first name in your choices? Welcome in the universe of the first names and their meaning…</string>
     <string name="home_search_placeholder">Search a name…</string>
-
     <string name="home_card1_txt">Numbers and their meanings</string>
     <string name="home_card2_txt">Learn about your Birth Day</string>
     <string name="home_card3_txt">Calculate your Life Path</string>
+
+
+    <!-- NAV -->
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="openDrawer" translatable="false">open_drawer</string>
+    <string name="closeDrawer" translatable="false">close_drawer</string>
 
     <!-- CATEGORIES -->
     <string name="category_compatibility">Compatibility</string>
