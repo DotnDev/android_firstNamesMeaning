@@ -9,37 +9,6 @@
     style="?android:buttonBarButtonStyle"
     >
 
-        <LinearLayout
-            android:id="@+id/home_introduction_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="20dp"
-            app:layout_constraintBottom_toTopOf="@id/home_nameDay_ll"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-
-            <TextView
-                android:id="@+id/home_introduction_title_txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_intro_title"
-                android:textColor="@color/orange"
-                android:textSize="@dimen/text_title"
-                />
-
-            <TextView
-                android:id="@+id/home_introduction_txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/home_intro_txt"
-                android:textColor="@color/black"
-                />
-
-        </LinearLayout>
-
     <LinearLayout
         android:id="@+id/home_nameDay_ll"
         android:layout_width="wrap_content"
@@ -49,7 +18,7 @@
         app:layout_constraintBottom_toTopOf="@id/home_CTAs_ll"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_introduction_ll"
+        app:layout_constraintTop_toTopOf="parent"
         >
 
         <TextView
@@ -83,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -94,8 +63,8 @@
             android:id="@+id/home_compatibility_btn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:padding="5dp"
             android:text="@string/category_compatibility"
             android:textSize="@dimen/text_size_minimum"
@@ -108,8 +77,8 @@
             android:id="@+id/home_horoscope_btn"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:padding="5dp"
             android:text="@string/category_horoscope"
             android:textSize="@dimen/text_size_minimum"
@@ -123,8 +92,8 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:text="@string/category_ranking"
             android:textSize="@dimen/text_size_minimum"
             android:background="@drawable/border_orange_fill"

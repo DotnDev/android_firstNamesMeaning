@@ -79,11 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void setUpFragment(Bundle savedInstanceState) {
-        Log.d("testing", "yup in frag");
-
 
         if (savedInstanceState == null) {
-            Log.d("testing", "yup");
             CURRENT_TAG = TAG_HOME;
             selectedFragment = new HomeFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.frame,
