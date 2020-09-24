@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="?android:buttonBarButtonStyle"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <TextView
         android:id="@+id/name_name_txtView"
@@ -14,7 +14,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/name_gender_title_txtView"
@@ -24,7 +25,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
+        />
 
     <TextView
         android:id="@+id/name_gender_txtView"
@@ -33,7 +35,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_numbers_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_gender_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_gender_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_numbers_title_txtView"
@@ -43,7 +46,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_numbers_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_gender_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_gender_txtView"
+        />
 
     <TextView
         android:id="@+id/name_numbers_txtView"
@@ -52,7 +56,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_nameDay_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_numbers_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_numbers_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_nameDay_title_txtView"
@@ -63,7 +68,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_numbers_txtView"
-
         />
 
     <TextView
@@ -73,7 +77,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_origin_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_nameDay_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_nameDay_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_origin_title_txtView"
@@ -83,7 +88,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_origin_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_nameDay_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_nameDay_txtView"
+        />
 
     <TextView
         android:id="@+id/name_origin_txtView"
@@ -92,7 +98,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_etymology_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_origin_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_origin_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_etymology_title_txtView"
@@ -102,7 +109,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_etymology_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_origin_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_origin_txtView"
+        />
 
     <TextView
         android:id="@+id/name_etymology_txtView"
@@ -111,7 +119,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_desc_be_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_be_title_txtView"
@@ -120,16 +129,18 @@
         app:layout_constraintBottom_toTopOf="@id/name_desc_be_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_etymology_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_etymology_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_be_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintBottom_toTopOf="@id/name_desc_love_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_love_title_txtView"
@@ -138,7 +149,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_desc_love_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_desc_be_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_desc_be_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_love_txtView"
@@ -147,7 +159,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_desc_do_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_desc_love_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_desc_love_title_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_do_title_txtView"
@@ -156,7 +169,8 @@
         app:layout_constraintBottom_toTopOf="@id/name_desc_do_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_desc_love_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_desc_love_txtView"
+        />
 
     <TextView
         android:id="@+id/name_desc_do_txtView"
@@ -165,6 +179,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_desc_do_title_txtView" />
+        app:layout_constraintTop_toBottomOf="@id/name_desc_do_title_txtView"
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

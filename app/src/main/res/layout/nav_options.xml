@@ -95,7 +95,7 @@
         android:layout_margin="10dp"
         android:text="@string/category_birth_day"
         android:textSize="@dimen/large_textsize"
-        app:layout_constraintBottom_toTopOf="nav_help_txtview"
+        app:layout_constraintBottom_toTopOf="@+id/nav_help_txtView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_life_path_txtView" />
