@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG_HOME = "home";
 
     //DB TEST
-    ListView listView;
+    private static final String url = "jdbc:mysql://localhost:8889/SignificationPrenom_test";
+    private static final String user = "root";
+    private static final String pass = "root";
 
 
     @Override
@@ -164,64 +166,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-    //DB TEST
-    private class DownloadJSON extends AsyncTask<Void, Void, String> {
-
-        private WeakReference<MainActivity> activityReference;
-
-        // only retain a weak reference to the activity
-        DownloadJSON(MainActivity context) {
-            activityReference = new WeakReference<>(context);
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            // get a reference to the activity if it is still there
-            MainActivity activity = activityReference.get();
-            if (activity == null || activity.isFinishing()) return;
-
-            try {
-                loadIntoListView(s);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        protected String doInBackground(Void... voids) {
-            try {
-                URL url = new URL("INSERT_URL_HERE");
-                HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                StringBuilder sb = new StringBuilder();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                String json;
-                while ((json = bufferedReader.readLine()) != null) {
-                    sb.append(json).append("\n");
-                }
-                return sb.toString().trim();
-            } catch (Exception e) {
-                return null;
-            }
-        }
-    }
-
-    private void loadIntoListView(String json) throws JSONException {
-        JSONArray jsonArray = new JSONArray(json);
-        String[] names = new String[jsonArray.length()];
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject obj = jsonArray.getJSONObject(i);
-            names[i] = obj.getString("first_name") + " " + obj.getString("gender");
-        }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, names);
-        listView.setAdapter(arrayAdapter);
-    }
 }
