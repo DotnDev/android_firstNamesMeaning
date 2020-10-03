@@ -134,8 +134,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Set up Navigation View
     private void setUpNavigationView() {
 
-        Log.d("testing", "yup in navbar");
-
         drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
