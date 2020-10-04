@@ -11,41 +11,45 @@
      >
 
     <TextView
-        android:id="@+id/widget_horoscope_title_txtView"
+        android:id="@+id/compatibility_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/widget_horoscope_title"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_txt_txtView"
+        android:text="@string/compatibility_title"
         android:textColor="@color/black"
         android:textSize="@dimen/text_title"
         android:textStyle="bold"
         />
 
     <TextView
-        android:id="@+id/widget_horoscope_txt_txtView"
+        android:id="@+id/compatibility_txt_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_input_name"
-        android:text="@string/widget_horoscope_text"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_input_name1"
+        android:text="@string/compatibility_introduction"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_regular"
         />
 
     <EditText
-        android:id="@+id/widget_horoscope_input_name"
+        android:id="@+id/compatibility_input_name1"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_txt_txtView"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_input_email"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_txt_txtView"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_input_name2"
         android:padding="@dimen/padding_small"
-        android:text="@string/widget_horoscope_input_name"
+        android:text="@string/compatibility_widget_input_name1"
         android:textColor="@color/basic"
         android:background="@drawable/border_white_fill"
         android:autofillHints="name"
@@ -53,62 +57,34 @@
         />
 
     <EditText
-        android:id="@+id/widget_horoscope_input_email"
+        android:id="@+id/compatibility_input_name2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin_regular"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_input_name"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_consent_checkBox"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_input_name1"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_btn"
         android:padding="@dimen/padding_small"
         android:text="@string/widget_horoscope_input_email"
         android:textColor="@color/basic"
         android:background="@drawable/border_white_fill"
-        android:autofillHints="email"
-        android:inputType="textEmailAddress"
-        />
-
-    <CheckBox
-        android:id="@+id/widget_horoscope_remember_checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin_small"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_input_email"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_consent_checkBox"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="@string/horoscope_remember"
-        android:textColor="@color/black"
-        app:buttonTint="@color/black"
-        />
-
-    <CheckBox
-        android:id="@+id/widget_horoscope_consent_checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin_small"
-        android:layout_marginBottom="@dimen/normal_margin_small"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_remember_checkBox"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_btn"
-        android:text="@string/widget_horoscope_consent"
-        android:textColor="@color/black"
-        app:buttonTint="@color/black"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
         />
 
     <Button
-        android:id="@+id/widget_horoscope_btn"
+        android:id="@+id/compatibility_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_small"
         android:layout_marginTop="@dimen/normal_margin_regular"
         android:layout_marginBottom="@dimen/normal_margin_small"
-        android:background="@drawable/border_dark_purple_fill"
+        android:background="@drawable/border_orange_fill"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_consent_checkBox"
-        android:text="@string/widget_horoscope_btn"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_input_name2"
+        android:text="@string/compatibility_widget_btn"
         android:textColor="@color/white"
         />
 

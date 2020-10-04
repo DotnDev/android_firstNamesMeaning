@@ -56,15 +56,11 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <!-- COMPATIBILITY -->
     <string name="compatibility_title">First Names Compatibility</string>
     <string name="compatibility_introduction">
-        You want to know if your first names are compatible? Whether your character traits can lead to a big love story, to friendship or a tempestuous and stormy relationship?
-Test the compatibility of your names to know if your love relationship is likely to succeed. Friendship, love or passion?<br/>
-Thanks to our test, discover now what awaits you…
+        Friendship, love or passion? Test your compatibility with someone else now…
     </string>
     <string name="compatibility_widget_title">Compatibility Calculator</string>
-    <string name="compatibility_widget_input_name1">Friendship, love or passion?<br/>
-Find out now if your names are compatible!</string>
-    <string name="compatibility_widget_input_name2">First Name</string>
-    <string name="compatibility_widget_text">Another First Name</string>
+    <string name="compatibility_widget_input_name1">First Name</string>
+    <string name="compatibility_widget_input_name2">Another First Name</string>
     <string name="compatibility_widget_btn">MATCH</string>
 
     <!-- FIRST NAME DESCRIPTION -->

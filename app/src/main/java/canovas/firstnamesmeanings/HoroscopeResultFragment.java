@@ -28,7 +28,7 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
 
-        Button horoscope_submit_btn = view.findViewById(R.id.widget_horoscope_btn);
+        Button horoscope_submit_btn = view.findViewById(R.id.compatibility_btn);
         horoscope_submit_btn.setOnClickListener(this);
 
         return view;
@@ -39,7 +39,7 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.widget_horoscope_btn) {
+        if (view.getId() == R.id.compatibility_btn) {
             mCallback.onHoroscopeSubmit();
         }
     }
