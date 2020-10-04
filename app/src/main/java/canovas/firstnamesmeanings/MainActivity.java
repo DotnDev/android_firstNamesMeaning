@@ -211,8 +211,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onHoroscopeSubmit() {
-
+    public void onHoroscopeSubmit(String firstName) {
+        fragment = new HoroscopeResultFragment();
+        openNewFragment(fragment);
     }
 
     private void openNewFragment(Fragment fragment) {
