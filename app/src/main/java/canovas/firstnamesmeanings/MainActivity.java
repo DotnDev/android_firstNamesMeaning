@@ -36,7 +36,9 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnButtonClickedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnButtonClickedListener, HoroscopeFragment.OnButtonClickedListener {
+
+    Fragment fragment = null;
 
     private MyRequest mMyRequest;
     private RequestQueue queue;
@@ -189,9 +191,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onSearchButtonClicked() {
+    public void onButtonClicked(View view) {
 
-        enableInput();
+        switch(view.getId()){
+            case R.id.home_search_btn:
+                enableInput();
+                break;
+            case R.id.home_horoscope_btn:
+                fragment = new HoroscopeFragment();
+                openNewFragment(fragment);
+        }
 
     }
 
@@ -199,5 +208,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
         imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
+    }
+
+    @Override
+    public void onHoroscopeSubmit() {
+
+    }
+
+    private void openNewFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame,
+                fragment).addToBackStack(null).commit();
     }
 }

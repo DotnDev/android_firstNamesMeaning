@@ -42,7 +42,7 @@
     <string name="widget_name_day_name">Today is…</string>
 
 
-    <!-- HOROSCOPE -->
+    <!-- HOROSCOPE WIDGET -->
     <string name="widget_horoscope_title">Daily Horoscope</string>
     <string name="widget_horoscope_text">To search your horoscope, enter your first name below:
 To subscribe to our daily horoscope newsletter, enter your email as well!</string>
@@ -51,6 +51,16 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_consent">I agree to receive my horoscope newsletter daily. No-spam policy guaranteed.</string>
     <string name="widget_horoscope_btn">Get my horoscope</string>
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
+
+    <!-- HOROSCOPE PAGE -->
+    <string name="horoscope_title">A horoscope personalised for your first name!</string>
+    <string name="horoscope_introduction">Thanks to numerology, we offer you a daily horoscope personalised for your first name. Love, money and health: discover what you should focus on today. As a bonus every day, find your daily lucky number.</string>
+    <string name="horoscope_remember">Save my name</string>
+    <string name="horoscope_love">Love</string>
+    <string name="horoscope_money">Money</string>
+    <string name="horoscope_health">Health</string>
+    <string name="horoscope_lucky_number">Lucky Number</string>
+
 
     <!-- FIRST NAME DESCRIPTION -->
     <string name="name_gender_title">Gender</string>

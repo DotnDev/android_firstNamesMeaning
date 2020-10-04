@@ -12,23 +12,20 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private Button home_search_btn;
-
     private OnButtonClickedListener mCallback;
 
-    public void setOnButtonClickedListener(OnButtonClickedListener mCallback){
+    public void setOnButtonClickedListener(OnButtonClickedListener mCallback) {
         this.mCallback = mCallback;
     }
 
     public interface OnButtonClickedListener {
-        public void onSearchButtonClicked();
+        public void onButtonClicked(View view);
     }
 
     @Nullable
@@ -37,27 +34,31 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         TextView nameDay_date = view.findViewById(R.id.home_nameDay_date_txtView);
-        nameDay_date.setText(getDate());
+        Button home_search_btn = view.findViewById(R.id.home_search_btn);
+        Button home_horoscope_btn = view.findViewById(R.id.home_horoscope_btn);
 
-        home_search_btn = view.findViewById(R.id.home_search_btn);
         home_search_btn.setOnClickListener(this);
+        home_horoscope_btn.setOnClickListener(this);
+
+        nameDay_date.setText(getDate());
 
         return view;
 
     }
 
-    private String getDate(){
+    //Get today's date
+    private String getDate() {
 
         SimpleDateFormat sdf = new SimpleDateFormat("EE dd MMM yyyy", Locale.FRENCH);
         return sdf.format(new Date());
     }
 
 
+    //Send event to Main Activity
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.home_search_btn) {
-            mCallback.onSearchButtonClicked();
-        }
+        mCallback.onButtonClicked(view);
+
     }
 }
