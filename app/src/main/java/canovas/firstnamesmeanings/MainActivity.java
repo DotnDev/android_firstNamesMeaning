@@ -16,12 +16,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
@@ -36,12 +38,16 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
+    private MyRequest mMyRequest;
+    private RequestQueue queue;
+
     private Toolbar toolbar;
     private DrawerLayout drawer;
 
     RelativeLayout toolBar;
     RelativeLayout searchBar;
     EditText searchInput;
+    ImageView submitSearch_imgView;
 
     Fragment selectedFragment = null;
 
@@ -62,7 +68,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolBar = findViewById(R.id.toolbar_rl);
         searchBar = findViewById(R.id.searchbar_rl);
         searchInput = findViewById(R.id.search_input);
+        submitSearch_imgView = findViewById(R.id.app_bar_search2);
 
+        submitSearch_imgView.setOnClickListener(this);
 
         setUpToolbar();
         setUpNavigationView();
@@ -70,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setUpSearch();
         closeUpSearch();
+
+        queue = VolleySingleton.getInstance(this).getRequestQueue();
+        mMyRequest = new MyRequest(this, queue);
 
         //DB TEST
         //listView = findViewById(R.id.listView);
@@ -96,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.app_bar_close_search:
                 disableInput();
+            case R.id.app_bar_search2:
+                submitSearch();
         }
     }
 
@@ -119,6 +132,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
         imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
+    }
+
+    private void submitSearch() {
+        String query = searchInput.getText().toString();
+        mMyRequest.getData(query);
     }
 
 

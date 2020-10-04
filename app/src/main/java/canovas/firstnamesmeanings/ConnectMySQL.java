@@ -12,6 +12,7 @@ import java.net.URL;
 
 public class ConnectMySQL extends AsyncTask<Void, Void, String> {
 
+
     private WeakReference<MainActivity> activityReference;
 
     // only retain a weak reference to the activity
@@ -33,11 +34,11 @@ public class ConnectMySQL extends AsyncTask<Void, Void, String> {
         MainActivity activity = activityReference.get();
         if (activity == null || activity.isFinishing()) return;
 
-        try {
+       /*  try {
             //loadIntoListView(s);
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        } */
     }
 
     @Override
@@ -56,4 +57,5 @@ public class ConnectMySQL extends AsyncTask<Void, Void, String> {
             return null;
         }
     }
+
 }
