@@ -18,6 +18,9 @@ public class FirstName implements Parcelable{
     private FirstName(Parcel in) {
     }
 
+    public FirstName() {
+    }
+
     public FirstName(JSONObject jObject) {
         this.firstNameId = jObject.optString("id");
         this.name = jObject.optString("number1");

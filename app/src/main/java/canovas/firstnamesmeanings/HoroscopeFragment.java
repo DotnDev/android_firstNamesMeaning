@@ -17,6 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import Models.FirstName;
+
 
 public class HoroscopeFragment extends Fragment implements View.OnClickListener {
 
@@ -26,15 +28,15 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     private CheckBox consent_checkBox;
     private CheckBox remember_checkBox;
 
-    SharedPreferences mSharedPreferences;
+    private SharedPreferences mSharedPreferences;
 
 
-    public void setOnButtonClickedListener(OnButtonClickedListener mCallback){
+    public void setOnButtonClickedListener(OnButtonClickedListener mCallback) {
         this.mCallback = mCallback;
     }
 
     public interface OnButtonClickedListener {
-        public void onHoroscopeSubmit(String firstName, String email);
+        public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed);
     }
 
     @Nullable
@@ -43,7 +45,6 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
         View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
 
         mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
-
 
         Button horoscope_submit_btn = view.findViewById(R.id.widget_horoscope_btn);
         firstName_editTxt = view.findViewById(R.id.widget_horoscope_input_name);
@@ -67,31 +68,51 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
         }
     }
 
-    private void checkInputsAndCheckboxes(){
+    private void checkInputsAndCheckboxes() {
+
         //Keeping this boolean true as long as user does not fill in the email
         boolean isConsent = true;
-        String firstName = firstName_editTxt.getText().toString();
+        boolean isSubscribed = false;
+        String nameEntered = firstName_editTxt.getText().toString();
+        FirstName name = new FirstName();
         String email = email_editTxt.getText().toString();
+        String errorMsg;
 
-        //First, check remember me box
-        if(!firstName.isEmpty() && remember_checkBox.isChecked()){
-            saveToPreferences(firstName);
+        //If name is empty
+        if(!nameEntered.isEmpty()){
+            errorMsg = "Name cannot be empty";
+        }else{
+            //Search in DB
         }
 
-        //Then check if email is filled in + consent is ticked
-        if(!email.isEmpty() && !consent_checkBox.isChecked()){
-            isConsent = false;
-        }
+        //If name was found
+        if (!name.getName().isEmpty()) {
+            //Check if remember me box is ticked
+            if (remember_checkBox.isChecked()) {
+                saveToPreferences(nameEntered);
+            }
 
-        //Check if name is not empty
-        if(!firstName.isEmpty() && isConsent){
-            mCallback.onHoroscopeSubmit(firstName, email);
+            //Then check if email is filled in + consent is ticked
+            if (!email.isEmpty() && consent_checkBox.isChecked()) {
+                isSubscribed = true;
+            }else if (!email.isEmpty() && !consent_checkBox.isChecked()){
+                isConsent = false;
+                errorMsg = "Please tick the consent box to subscribe to the newsletter";
+            }
+
+            //Check if consent is fine
+            if (isConsent) {
+                mCallback.onHoroscopeSubmit(nameEntered, email, isSubscribed);
+            }
+        }else{
+            errorMsg = "Name cannot be found in our database, sorry!";
+
         }
 
     }
 
     //Save name in SharedPrefs
-    private void saveToPreferences(String name){
+    private void saveToPreferences(String name) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
 
         editor.putString("name", name);
