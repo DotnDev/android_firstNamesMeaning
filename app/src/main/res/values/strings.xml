@@ -51,15 +51,22 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_consent">I agree to receive my horoscope newsletter daily. No-spam policy guaranteed.</string>
     <string name="widget_horoscope_btn">Get my horoscope</string>
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
-
-    <!-- HOROSCOPE PAGE -->
-    <string name="horoscope_title">A horoscope personalised for your first name!</string>
-    <string name="horoscope_introduction">Thanks to numerology, we offer you a daily horoscope personalised for your first name. Love, money and health: discover what you should focus on today. As a bonus every day, find your daily lucky number.</string>
     <string name="horoscope_remember">Save my name</string>
-    <string name="horoscope_love">Love</string>
-    <string name="horoscope_money">Money</string>
-    <string name="horoscope_health">Health</string>
-    <string name="horoscope_lucky_number">Lucky Number</string>
+
+    <!-- COMPATIBILITY -->
+    <string name="compatibility_title">First Names Compatibility</string>
+    <string name="compatibility_introduction">
+        You want to know if your first names are compatible? Whether your character traits can lead to a big love story, to friendship or a tempestuous and stormy relationship?
+Test the compatibility of your names to know if your love relationship is likely to succeed. Friendship, love or passion?<br/>
+Thanks to our test, discover now what awaits you…
+    </string>
+    <string name="compatibility_widget_title">Compatibility Calculator</string>
+    <string name="compatibility_widget_input_name1">Friendship, love or passion?<br/>
+Find out now if your names are compatible!</string>
+    <string name="compatibility_widget_input_name2">First Name</string>
+    <string name="compatibility_widget_text">Another First Name</string>
+    <string name="compatibility_widget_btn">MATCH</string>
+
 
 
     <!-- FIRST NAME DESCRIPTION -->
