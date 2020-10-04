@@ -26,8 +26,9 @@
     <string name="closeDrawer" translatable="false">close_drawer</string>
 
     <!-- CATEGORIES -->
+    <string name="category_search">Search a name</string>
+    <string name="category_horoscope">My Horoscope</string>
     <string name="category_compatibility">Compatibility</string>
-    <string name="category_horoscope">Horoscope</string>
     <string name="category_ranking">Ranking</string>
     <string name="category_numbers">Numbers</string>
     <string name="category_birth_day">Birth Day</string>

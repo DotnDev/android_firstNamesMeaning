@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,15 +19,28 @@ import java.util.Locale;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
-    private TextView nameDay_date;
+    private Button home_search_btn;
+
+    private OnButtonClickedListener mCallback;
+
+    public void setOnButtonClickedListener(OnButtonClickedListener mCallback){
+        this.mCallback = mCallback;
+    }
+
+    public interface OnButtonClickedListener {
+        public void onSearchButtonClicked();
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        nameDay_date = view.findViewById(R.id.home_nameDay_date_txtView);
+
+        TextView nameDay_date = view.findViewById(R.id.home_nameDay_date_txtView);
         nameDay_date.setText(getDate());
+
+        home_search_btn = view.findViewById(R.id.home_search_btn);
+        home_search_btn.setOnClickListener(this);
 
         return view;
 
@@ -35,13 +49,15 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private String getDate(){
 
         SimpleDateFormat sdf = new SimpleDateFormat("EE dd MMM yyyy", Locale.FRENCH);
-        String date  = sdf.format(new Date());
-        return date;
+        return sdf.format(new Date());
     }
 
 
     @Override
     public void onClick(View view) {
 
+        if (view.getId() == R.id.home_search_btn) {
+            mCallback.onSearchButtonClicked();
+        }
     }
 }

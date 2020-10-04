@@ -36,7 +36,7 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnButtonClickedListener {
 
     private MyRequest mMyRequest;
     private RequestQueue queue;
@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         submitSearch_imgView.setOnClickListener(this);
 
+        disableInput();
+
         setUpToolbar();
         setUpNavigationView();
         setUpFragment(savedInstanceState);
@@ -81,10 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         mMyRequest = new MyRequest(this, queue);
-
-        //DB TEST
-        //listView = findViewById(R.id.listView);
-        //new DownloadJSON(this).execute();
 
     }
 
@@ -129,9 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolBar.setVisibility(View.VISIBLE);
         searchBar.setVisibility(View.GONE);
 
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-        assert imm != null;
-        imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
+        hideKeyboard();
     }
 
     private void submitSearch() {
@@ -184,4 +180,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public void onAttachFragment(@NonNull Fragment fragment) {
+        if (fragment instanceof HomeFragment) {
+            HomeFragment homeFragment = (HomeFragment) fragment;
+            homeFragment.setOnButtonClickedListener(this);
+        }
+    }
+
+    @Override
+    public void onSearchButtonClicked() {
+
+        enableInput();
+
+    }
+
+    public void hideKeyboard(){
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        assert imm != null;
+        imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
+    }
 }
