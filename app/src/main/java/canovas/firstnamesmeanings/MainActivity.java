@@ -210,14 +210,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
     }
 
-    @Override
-    public void onHoroscopeSubmit(String firstName) {
-        fragment = new HoroscopeResultFragment();
-        openNewFragment(fragment);
-    }
 
     private void openNewFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame,
                 fragment).addToBackStack(null).commit();
+    }
+
+    @Override
+    public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed) {
+
     }
 }

@@ -42,7 +42,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
+        View view = inflater.inflate(R.layout.widget_horoscope, container, false);
 
         mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
 

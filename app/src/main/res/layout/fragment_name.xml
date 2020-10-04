@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/name_gender_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="name_numbers_txtView"
+        app:layout_constraintRight_toLeftOf="@id/name_numbers_txtView"
         app:layout_constraintBottom_toTopOf="@id/name_ll"
 
         />
