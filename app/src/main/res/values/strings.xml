@@ -53,6 +53,12 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
     <string name="horoscope_remember">Save my name</string>
 
+    <string name="horoscope_love">Love</string>
+    <string name="horoscope_money">Money</string>
+    <string name="horoscope_health">Health</string>
+    <string name="horoscope_lucky_number">Lucky Number</string>
+
+
     <!-- COMPATIBILITY -->
     <string name="compatibility_title">First Names Compatibility</string>
     <string name="compatibility_introduction">
