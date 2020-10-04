@@ -36,7 +36,12 @@ import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener, HomeFragment.OnButtonClickedListener, HoroscopeFragment.OnButtonClickedListener {
+public class MainActivity extends AppCompatActivity implements
+        View.OnClickListener,
+        NavigationView.OnNavigationItemSelectedListener,
+        HomeFragment.OnButtonClickedListener,
+        HoroscopeFragment.OnButtonClickedListener,
+        CompatibilityFragment.OnButtonClickedListener{
 
     Fragment fragment = null;
 
@@ -219,5 +224,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed) {
 
+        //Search name in DB
+        //Launch new fragment with results
+    }
+
+    @Override
+    public void onCompatibilitySubmit(String name1, String name2) {
+
+        //Calculate score
+        //Open new fragment with results
     }
 }

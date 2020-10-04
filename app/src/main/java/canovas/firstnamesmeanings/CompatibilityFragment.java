@@ -59,7 +59,15 @@ public class CompatibilityFragment extends Fragment implements View.OnClickListe
 
     private void checkInputs() {
 
+        String name1 = input_name1.getText().toString();
+        String name2 = input_name2.getText().toString();
+        String errorMsg;
 
+        if(!name1.isEmpty() && !name2.isEmpty()){
+            mCallback.onCompatibilitySubmit(name1,name2);
+        }else{
+            errorMsg = "Please fill in both inputs";
+        }
 
     }
 }
