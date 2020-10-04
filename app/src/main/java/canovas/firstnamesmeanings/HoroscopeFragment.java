@@ -42,10 +42,10 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
 
         mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
 
-        Button horoscope_submit_btn = view.findViewById(R.id.compatibility_btn);
-        firstName_editTxt = view.findViewById(R.id.compatibility_input_name1);
-        email_editTxt = view.findViewById(R.id.compatibility_input_name2);
-        consent_checkBox = view.findViewById(R.id.widget_horoscope_consent_checkBox);
+        Button horoscope_submit_btn = view.findViewById(R.id.horoscope_btn);
+        firstName_editTxt = view.findViewById(R.id.horoscope_name_editTxt);
+        email_editTxt = view.findViewById(R.id.horoscope_email_editTxt);
+        consent_checkBox = view.findViewById(R.id.horoscope_consent_checkBox);
         remember_checkBox = view.findViewById(R.id.horoscope_remember_checkBox);
 
         horoscope_submit_btn.setOnClickListener(this);
@@ -59,7 +59,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     public void onClick(View view) {
 
         //Click on submit
-        if (view.getId() == R.id.compatibility_btn) {
+        if (view.getId() == R.id.horoscope_btn) {
             checkInputsAndCheckboxes();
         }
     }

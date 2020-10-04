@@ -11,7 +11,7 @@
      >
 
     <TextView
-        android:id="@+id/compatibility_title_txtView"
+        android:id="@+id/horoscope_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,26 +24,26 @@
         />
 
     <TextView
-        android:id="@+id/compatibility_txt_txtView"
+        android:id="@+id/horoscope_txt_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/compatibility_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/compatibility_input_name1"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_title_txtView"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_name_editTxt"
         android:text="@string/widget_horoscope_text"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_regular"
         />
 
     <EditText
-        android:id="@+id/compatibility_input_name1"
+        android:id="@+id/horoscope_name_editTxt"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/compatibility_txt_txtView"
-        app:layout_constraintBottom_toTopOf="@id/compatibility_input_name2"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_txt_txtView"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_email_editTxt"
         android:padding="@dimen/padding_small"
         android:text="@string/widget_horoscope_input_name"
         android:textColor="@color/basic"
@@ -53,13 +53,13 @@
         />
 
     <EditText
-        android:id="@+id/compatibility_input_name2"
+        android:id="@+id/horoscope_email_editTxt"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/compatibility_input_name1"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_consent_checkBox"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_name_editTxt"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_consent_checkBox"
         android:padding="@dimen/padding_small"
         android:text="@string/widget_horoscope_input_email"
         android:textColor="@color/basic"
@@ -69,12 +69,12 @@
         />
 
     <CheckBox
-        android:id="@+id/widget_horoscope_remember_checkBox"
+        android:id="@+id/horoscope_remember_checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin_small"
-        app:layout_constraintTop_toBottomOf="@id/compatibility_input_name2"
-        app:layout_constraintBottom_toTopOf="@id/widget_horoscope_consent_checkBox"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_email_editTxt"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_consent_checkBox"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/horoscope_remember"
@@ -83,22 +83,22 @@
         />
 
     <CheckBox
-        android:id="@+id/widget_horoscope_consent_checkBox"
+        android:id="@+id/horoscope_consent_checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin_small"
         android:layout_marginBottom="@dimen/normal_margin_small"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_remember_checkBox"
-        app:layout_constraintBottom_toTopOf="@id/compatibility_btn"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_remember_checkBox"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_btn"
         android:text="@string/widget_horoscope_consent"
         android:textColor="@color/black"
         app:buttonTint="@color/black"
         />
 
     <Button
-        android:id="@+id/compatibility_btn"
+        android:id="@+id/horoscope_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_small"
@@ -107,7 +107,7 @@
         android:background="@drawable/border_dark_purple_fill"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/widget_horoscope_consent_checkBox"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_consent_checkBox"
         android:text="@string/widget_horoscope_btn"
         android:textColor="@color/white"
         />
