@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         drawer.openDrawer(GravityCompat.START);
                     }
                 });
-        //actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_menu2);
+        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_menu);
     }
 
 
