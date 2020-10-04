@@ -9,6 +9,21 @@
     android:orientation="vertical"
     >
 
+    <TextView
+        android:id="@+id/horoscope_result_title_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horoscope_result_title"
+        />
+
+
+    <TextView
+        android:id="@+id/horoscope_result_title_love_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horoscope_love"
+        />
+
     <!-- LOVE COUPLES -->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -64,6 +79,12 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/horoscope_result_title_money_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horoscope_money"
+        />
     <!-- MONEY -->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -87,6 +108,13 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/horoscope_result_title_health_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horoscope_health"
+        />
+
     <!-- HEALTH -->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -109,6 +137,13 @@
             />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/horoscope_result_title_number_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/horoscope_lucky_number"
+        />
 
     <!-- LUCKY NUMBER -->
     <RelativeLayout
