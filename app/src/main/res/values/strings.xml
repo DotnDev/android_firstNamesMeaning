@@ -63,6 +63,12 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="compatibility_widget_input_name2">Another First Name</string>
     <string name="compatibility_widget_btn">MATCH</string>
 
+    <string name="compatibility_result_love">Love</string>
+    <string name="compatibility_result_friendship">Friendship</string>
+    <string name="compatibility_result_sexuality">Sexuality</string>
+    <string name="compatibility_result_complicity">Complicity</string>
+    <string name="compatibility_result_fidelity">Fidelity</string>
+
     <!-- FIRST NAME DESCRIPTION -->
     <string name="name_gender_title">Gender</string>
     <string name="name_numbers_title">Numbers</string>

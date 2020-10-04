@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/background"
+    android:padding="@dimen/padding_regular"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+     >
+
+    <TextView
+        android:id="@+id/compatibility_result_names_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
+        />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_margin_regular"
+            >
+
+            <TextView
+                android:id="@+id/compatibility_result_love_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                android:text="@string/compatibility_result_love"
+                />
+
+
+            <TextView
+                android:id="@+id/compatibility_result_love_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:background="@drawable/border_white_round_fill"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_margin_regular"
+            >
+            <TextView
+                android:id="@+id/compatibility_result_friendship_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                android:text="@string/compatibility_result_friendship"
+                />
+
+            <TextView
+                android:id="@+id/compatibility_result_friendship_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white_round_fill"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_margin_regular"
+            >
+            <TextView
+                android:id="@+id/compatibility_result_sexuality_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                android:text="@string/compatibility_result_sexuality"
+                />
+
+            <TextView
+                android:id="@+id/compatibility_result_sexuality_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_white_round_fill"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_margin_regular"
+            >
+            <TextView
+                android:id="@+id/compatibility_result_complicity_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                android:text="@string/compatibility_result_complicity"
+                />
+
+            <TextView
+                android:id="@+id/compatibility_result_complicity_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:background="@drawable/border_white_round_fill"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/normal_margin_regular"
+
+            >
+            <TextView
+                android:id="@+id/compatibility_result_fidelity_title_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                android:text="@string/compatibility_result_fidelity"
+                />
+
+            <TextView
+                android:id="@+id/compatibility_result_fidelity_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_small"
+                android:background="@drawable/border_white_round_fill"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_regular"
+                />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/compatibility_result_txt_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin_regular"
+        android:padding="@dimen/padding_small"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_regular"
+        />
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
