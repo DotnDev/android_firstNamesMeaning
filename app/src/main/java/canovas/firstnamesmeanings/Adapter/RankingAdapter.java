@@ -68,6 +68,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
         @Override
         public void onClick(View view) {
 
+            //Go to name fragment
         }
     }
 }
