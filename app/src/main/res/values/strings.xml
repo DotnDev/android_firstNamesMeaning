@@ -95,6 +95,14 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="name_description_do_title_p">What do they like?</string>
     <string name="name_description_love_title_p">What do they do?</string>
 
+
+    <!-- RANKING -->
+    <string name="ranking_title">First Name Ranking</string>
+    <string name="ranking_text">Discover the 10 most popular first names from our website!</string>
+    <string name="ranking_column_name">First Name</string>
+    <string name="ranking_column_gender">Gender</string>
+    <string name="ranking_column_origin">Origin</string>
+
     <!-- CTAs TEXT -->
     <string name="cta_read_more">Read More</string>
 
