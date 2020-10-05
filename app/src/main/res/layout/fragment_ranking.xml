@@ -7,20 +7,44 @@
     android:layout_gravity="center"
     android:background="@drawable/background"
     android:padding="@dimen/padding_regular"
-    style="?android:buttonBarButtonStyle"
      >
 
     <TextView
-        android:id="@+id/horoscope_title_txtView"
+        android:id="@+id/ranking_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/widget_horoscope_title"
+        app:layout_constraintBottom_toTopOf="@id/ranking_txt_txtView"
+        android:text="@string/ranking_title"
         android:textColor="@color/black"
         android:textSize="@dimen/text_title"
         android:textStyle="bold"
         />
 
+
+    <TextView
+        android:id="@+id/ranking_txt_txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toToBottomOf="@id/ranking_title_txtView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ranking_recyclerView"
+        android:text="@string/ranking_text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_regular"
+        android:textStyle="bold"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ranking_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toToBottomOf="@id/ranking_txt_txtView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
