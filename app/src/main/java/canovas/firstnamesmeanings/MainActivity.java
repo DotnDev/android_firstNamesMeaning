@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements
     private RequestQueue queue;
 
     private Toolbar toolbar;
-    private DrawerLayout drawer;
+
+    private DrawerLayout drawerLayout;
 
     RelativeLayout toolBar;
     RelativeLayout searchBar;
@@ -78,17 +79,46 @@ public class MainActivity extends AppCompatActivity implements
 
         submitSearch_imgView.setOnClickListener(this);
 
-        disableInput();
+        this.disableInput();
 
-        setUpToolbar();
-        setUpNavigationView();
-        setUpFragment(savedInstanceState);
+        this.setUpToolbar();
+        this.setUpFragment(savedInstanceState);
+
+        this.configureDrawerLayout();
+        this.configureNavigationView();
 
         setUpSearch();
         closeUpSearch();
 
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         mMyRequest = new MyRequest(this, queue);
+
+    }
+
+    private void configureDrawerLayout(){
+        this.drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        toggle.setDrawerIndicatorEnabled(false);
+        toggle.setToolbarNavigationClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        drawerLayout.openDrawer(GravityCompat.START);
+                    }
+                });
+        toggle.setHomeAsUpIndicator(R.drawable.ic_menu);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+    }
+
+    private void configureNavigationView(){
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
     }
 
@@ -153,7 +183,23 @@ public class MainActivity extends AppCompatActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+
+        int id = item.getItemId();
+
+        switch(id){
+            case R.id.nav_compatibility_txtView:
+                fragment = new CompatibilityFragment();
+                openNewFragment(fragment);
+                break;
+            case R.id.nav_horoscope_txtView:
+                fragment = new HoroscopeFragment();
+                openNewFragment(fragment);
+                break;
+        }
+
+        this.drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
     }
 
 
@@ -161,29 +207,6 @@ public class MainActivity extends AppCompatActivity implements
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
-
-    //Set up Navigation View
-    private void setUpNavigationView() {
-
-        drawer = findViewById(R.id.drawer_layout);
-
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.getHeaderView(0);
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.openDrawer, R.string.closeDrawer);
-
-        actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
-        actionBarDrawerToggle.setToolbarNavigationClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                        drawer.openDrawer(GravityCompat.START);
-                    }
-                });
-        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_menu);
-    }
-
 
     private void setUpFragment(Bundle savedInstanceState) {
 

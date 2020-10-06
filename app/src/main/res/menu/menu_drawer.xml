@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_compatibility_txtView"
+        android:title="@string/category_compatibility" />
+
+    <item
+        android:id="@+id/nav_horoscope_txtView"
+        android:title="@string/category_horoscope" />
+
+    <item
+        android:id="@+id/nav_ranking_txtView"
+        android:title="@string/category_ranking" />
+
+    <item
+        android:id="@+id/nav_numbers_txtView"
+        android:title="@string/category_numbers" />
+
+    <item
+        android:id="@+id/nav_life_path_txtView"
+        android:title="@string/category_life_path" />
+
+    <item
+        android:id="@+id/nav_birth_day_txtView"
+        android:title="@string/category_birth_day" />
+
+</menu>
