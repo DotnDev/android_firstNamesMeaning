@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements
     RelativeLayout searchBar;
     EditText searchInput;
     ImageView submitSearch_imgView;
+    ImageView appBar_logo_imgView;
 
     Fragment selectedFragment = null;
 
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Click on app bar logo => back to home fragment
+        appBar_logo_imgView = findViewById(R.id.app_bar_logo);
+        appBar_logo_imgView.setOnClickListener(this);
 
         toolBar = findViewById(R.id.toolbar_rl);
         searchBar = findViewById(R.id.searchbar_rl);
@@ -110,6 +115,13 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.app_bar_search2:
                 submitSearch();
                 break;
+            case R.id.app_bar_logo:
+                if(!(fragment instanceof HomeFragment)){
+                    fragment = new HomeFragment();
+                    openNewFragment(fragment);
+                }
+
+
         }
     }
 
@@ -189,6 +201,18 @@ public class MainActivity extends AppCompatActivity implements
             HomeFragment homeFragment = (HomeFragment) fragment;
             homeFragment.setOnButtonClickedListener(this);
         }
+
+        if (fragment instanceof HoroscopeFragment) {
+            HoroscopeFragment horoscopeFragment = (HoroscopeFragment) fragment;
+            horoscopeFragment.setOnButtonClickedListener(this);
+        }
+
+        if (fragment instanceof CompatibilityFragment) {
+            CompatibilityFragment compatibilityFragment = (CompatibilityFragment) fragment;
+            compatibilityFragment.setOnButtonClickedListener(this);
+        }
+
+
     }
 
     //Button clicked in Home Fragment
