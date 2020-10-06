@@ -36,11 +36,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         TextView nameDay_date = view.findViewById(R.id.home_nameDay_date_txtView);
         Button home_search_btn = view.findViewById(R.id.home_search_btn);
         Button home_horoscope_btn = view.findViewById(R.id.home_horoscope_btn);
+        Button home_compatibility_btn = view.findViewById(R.id.home_compatibility_btn);
+        Button home_ranking_btn = view.findViewById(R.id.home_ranking_btn);
 
         home_search_btn.setOnClickListener(this);
         home_horoscope_btn.setOnClickListener(this);
+        home_compatibility_btn.setOnClickListener(this);
+        home_ranking_btn.setOnClickListener(this);
 
         nameDay_date.setText(getDate());
+        //Get name of the day
 
         return view;
 

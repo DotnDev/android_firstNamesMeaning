@@ -26,7 +26,8 @@ public class MyRequest {
 
     public void getData(final String firstName){
 
-        String url = "http://127.0.0.1:8000/android/get_name_description";
+        //Url, some token to authenticate, and params
+        String url = "http://http5.republique-media.com/";
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override

@@ -61,12 +61,6 @@ public class MainActivity extends AppCompatActivity implements
     public static String CURRENT_TAG;
     private static final String TAG_HOME = "home";
 
-    //DB TEST
-    private static final String url = "jdbc:mysql://localhost:8889/SignificationPrenom_test";
-    private static final String user = "root";
-    private static final String pass = "root";
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,8 +106,10 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.app_bar_close_search:
                 disableInput();
+                break;
             case R.id.app_bar_search2:
                 submitSearch();
+                break;
         }
     }
 
@@ -195,6 +191,7 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    //Button clicked in Home Fragment
     @Override
     public void onButtonClicked(View view) {
 
@@ -205,6 +202,15 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.home_horoscope_btn:
                 fragment = new HoroscopeFragment();
                 openNewFragment(fragment);
+                break;
+            case R.id.home_compatibility_btn:
+                fragment = new CompatibilityFragment();
+                openNewFragment(fragment);
+                break;
+            case R.id.home_ranking_btn:
+                fragment = new RankingFragment();
+                openNewFragment(fragment);
+                break;
         }
 
     }

@@ -48,7 +48,7 @@
         android:layout_margin="@dimen/normal_margin_regular"
         app:layout_constraintTop_toBottomOf="@id/horoscope_result_title_love_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="horoscope_result_love_single_rl"
+        app:layout_constraintRight_toLeftOf="@id/horoscope_result_love_single_rl"
         app:layout_constraintBottom_toTopOf="@id/horoscope_result_title_money_txtView"
         >
 
@@ -207,7 +207,7 @@
         android:textSize="@dimen/text_size_regular"
         android:textStyle="bold"
         android:text="@string/horoscope_lucky_number"
-        app:layout_constraintTop_toBottomOf="horoscope_result_health_rl"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_result_health_rl"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/horoscope_result_lucky_number_rl"
@@ -218,7 +218,7 @@
         android:id="@+id/horoscope_result_lucky_number_rl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="horoscope_result_title_number_txtView"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_result_title_number_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
