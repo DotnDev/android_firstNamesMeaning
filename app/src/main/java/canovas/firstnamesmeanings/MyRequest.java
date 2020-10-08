@@ -24,10 +24,7 @@ public class MyRequest {
         this.queue = queue;
     }
 
-    public void getData(final String firstName){
-
-        //Url, some token to authenticate, and params
-        String url = "http://http5.republique-media.com/";
+    public void getData(String url){
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -47,7 +44,7 @@ public class MyRequest {
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> map = new HashMap<>();
-                map.put("firstName", firstName);
+                //map.put("firstName", firstName);
 
                 return map;
             }

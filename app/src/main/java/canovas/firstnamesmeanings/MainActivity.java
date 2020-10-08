@@ -23,7 +23,12 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
@@ -35,6 +40,8 @@ import java.io.InputStreamReader;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener,
@@ -177,7 +184,9 @@ public class MainActivity extends AppCompatActivity implements
 
     private void submitSearch() {
         String query = searchInput.getText().toString();
-        mMyRequest.getData(query);
+        String token = "t0k3n4SFPRApp";
+        String url = "http://http5.republique-media.com/android/get_name?firstName="+query+"&token="+token;;
+        this.getData(url);
     }
 
 
@@ -286,5 +295,40 @@ public class MainActivity extends AppCompatActivity implements
 
         //Calculate score
         //Open new fragment with results
+    }
+
+
+
+    //Request to get data from PHP app
+    public void getData(String url){
+
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                //Create fragment
+                FirstNameFragment firstNameFragment = new FirstNameFragment();
+
+                //Create bundle to attach data to fragment
+                Bundle bundle = new Bundle();
+                bundle.putString("firstName", response);
+
+                //Attach bundle to frag
+                firstNameFragment.setArguments(bundle);
+                openNewFragment(firstNameFragment);
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getApplicationContext(),error.toString(), Toast.LENGTH_LONG).show();
+                Log.d("APP", "ERROR = " + error);
+
+            }
+        });
+
+        queue.add(request);
+
     }
 }
