@@ -48,12 +48,13 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnButtonClickedListener,
         HoroscopeFragment.OnButtonClickedListener,
-        CompatibilityFragment.OnButtonClickedListener{
+        CompatibilityFragment.OnButtonClickedListener {
 
     Fragment fragment = null;
 
     private MyRequest mMyRequest;
     private RequestQueue queue;
+    private String token;
 
     private Toolbar toolbar;
 
@@ -99,10 +100,11 @@ public class MainActivity extends AppCompatActivity implements
 
         queue = VolleySingleton.getInstance(this).getRequestQueue();
         mMyRequest = new MyRequest(this, queue);
+        token = Config.ANDROID_TOKEN;
 
     }
 
-    private void configureDrawerLayout(){
+    private void configureDrawerLayout() {
         this.drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    private void configureNavigationView(){
+    private void configureNavigationView() {
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements
         search_imgView.setOnClickListener(this);
     }
 
-    private void closeUpSearch(){
+    private void closeUpSearch() {
         ImageView close_imgView = findViewById(R.id.app_bar_close_search);
         close_imgView.setOnClickListener(this);
     }
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onClick(View view) {
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.app_bar_search:
                 enableInput();
                 break;
@@ -153,7 +155,7 @@ public class MainActivity extends AppCompatActivity implements
                 submitSearch();
                 break;
             case R.id.app_bar_logo:
-                if(!(fragment instanceof HomeFragment)){
+                if (!(fragment instanceof HomeFragment)) {
                     fragment = new HomeFragment();
                     openNewFragment(fragment);
                 }
@@ -174,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-    private void disableInput(){
+    private void disableInput() {
 
         toolBar.setVisibility(View.VISIBLE);
         searchBar.setVisibility(View.GONE);
@@ -184,8 +186,7 @@ public class MainActivity extends AppCompatActivity implements
 
     private void submitSearch() {
         String query = searchInput.getText().toString();
-        String token = "t0k3n4SFPRApp";
-        String url = "http://http5.republique-media.com/android/get_name?firstName="+query+"&token="+token;;
+        String url = Config.URL_GET_NAME + "?firstName=" + query + "&token=" + token;
         this.getData(url);
     }
 
@@ -195,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements
 
         int id = item.getItemId();
 
-        switch(id){
+        switch (id) {
             case R.id.nav_compatibility_txtView:
                 fragment = new CompatibilityFragment();
                 openNewFragment(fragment);
@@ -251,7 +252,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onButtonClicked(View view) {
 
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.home_search_btn:
                 enableInput();
                 break;
@@ -271,8 +272,8 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
-    public void hideKeyboard(){
-        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+    public void hideKeyboard() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         assert imm != null;
         imm.hideSoftInputFromWindow(searchInput.getWindowToken(), 0);
     }
@@ -298,9 +299,8 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
-
     //Request to get data from PHP app
-    public void getData(String url){
+    public void getData(String url) {
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -322,7 +322,7 @@ public class MainActivity extends AppCompatActivity implements
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(getApplicationContext(),error.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_LONG).show();
                 Log.d("APP", "ERROR = " + error);
 
             }
