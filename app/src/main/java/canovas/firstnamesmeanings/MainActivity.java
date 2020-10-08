@@ -187,7 +187,8 @@ public class MainActivity extends AppCompatActivity implements
     private void submitSearch() {
         String query = searchInput.getText().toString();
         String url = Config.URL_GET_NAME + "?firstName=" + query + "&token=" + token;
-        this.getData(url);
+        FirstNameFragment firstNameFragment = new FirstNameFragment();
+        this.getData(url,firstNameFragment, "firstName");
     }
 
 
@@ -289,6 +290,13 @@ public class MainActivity extends AppCompatActivity implements
 
         //Search name in DB
         //Launch new fragment with results
+        String url = Config.URL_GET_HOROSCOPE
+                + "?firstName=" + firstName
+                + "&email=" + email
+                + "&isSubscribed=" + isSubscribed
+                + "&token=" + token;
+        HoroscopeResultFragment horoscopeResultFragment = new HoroscopeResultFragment();
+        this.getData(url, horoscopeResultFragment, "horoscope");
     }
 
     @Override
@@ -296,26 +304,25 @@ public class MainActivity extends AppCompatActivity implements
 
         //Calculate score
         //Open new fragment with results
+        String url = Config.URL_GET_COMPATIBILITY + "?firstName1=" + name1 + "&firstName2=" + name2 + "&token=" + token;
+        CompatibilityResultFragment compatibilityResultFragment = new CompatibilityResultFragment();
+        this.getData(url, compatibilityResultFragment, "compatibility");
     }
 
-
     //Request to get data from PHP app
-    public void getData(String url) {
+    public void getData(String url, final Fragment fragment, final String bundleName) {
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                //Create fragment
-                FirstNameFragment firstNameFragment = new FirstNameFragment();
-
                 //Create bundle to attach data to fragment
                 Bundle bundle = new Bundle();
-                bundle.putString("firstName", response);
+                bundle.putString(bundleName, response);
 
                 //Attach bundle to frag
-                firstNameFragment.setArguments(bundle);
-                openNewFragment(firstNameFragment);
+                fragment.setArguments(bundle);
+                openNewFragment(fragment);
 
             }
         }, new Response.ErrorListener() {

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -70,19 +71,12 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
         boolean isConsent = true;
         boolean isSubscribed = false;
         String nameEntered = firstName_editTxt.getText().toString();
-        FirstName name = new FirstName();
         String email = email_editTxt.getText().toString();
-        String errorMsg;
 
         //If name is empty
-        if(!nameEntered.isEmpty()){
-            errorMsg = "Name cannot be empty";
+        if(nameEntered.isEmpty()){
+            Toast.makeText(getActivity(), "Name cannot be empty", Toast.LENGTH_LONG).show();
         }else{
-            //Search in DB
-        }
-
-        //If name was found
-        if (!name.getFirstName().isEmpty()) {
             //Check if remember me box is ticked
             if (remember_checkBox.isChecked()) {
                 saveToPreferences(nameEntered);
@@ -93,18 +87,14 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
                 isSubscribed = true;
             }else if (!email.isEmpty() && !consent_checkBox.isChecked()){
                 isConsent = false;
-                errorMsg = "Please tick the consent box to subscribe to the newsletter";
+                Toast.makeText(getActivity(), "Please tick the consent box to subscribe to the newsletter", Toast.LENGTH_LONG).show();
             }
 
             //Check if consent is fine
             if (isConsent) {
                 mCallback.onHoroscopeSubmit(nameEntered, email, isSubscribed);
             }
-        }else{
-            errorMsg = "Name cannot be found in our database, sorry!";
-
         }
-
     }
 
     //Save name in SharedPrefs
