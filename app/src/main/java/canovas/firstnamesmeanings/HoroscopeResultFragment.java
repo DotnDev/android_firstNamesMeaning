@@ -13,23 +13,10 @@ import androidx.fragment.app.Fragment;
 
 public class HoroscopeResultFragment extends Fragment implements View.OnClickListener {
 
-    private OnButtonClickedListener mCallback;
-
-    public void setOnButtonClickedListener(OnButtonClickedListener mCallback){
-        this.mCallback = mCallback;
-    }
-
-    public interface OnButtonClickedListener {
-        public void onHoroscopeSubmit();
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
-
-        Button horoscope_submit_btn = view.findViewById(R.id.compatibility_btn);
-        horoscope_submit_btn.setOnClickListener(this);
+        View view = inflater.inflate(R.layout.fragment_horoscope_result, container, false);
 
         return view;
 
@@ -39,8 +26,5 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
-        if (view.getId() == R.id.compatibility_btn) {
-            mCallback.onHoroscopeSubmit();
-        }
     }
 }
