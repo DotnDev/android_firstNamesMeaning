@@ -7,8 +7,8 @@ import org.json.JSONObject;
 
 public class FirstName implements Parcelable{
 
-    private String firstNameId;
-    private String name;
+    private String id;
+    private String firstName;
     private String gender;
     private String origin;
     private String etymology;
@@ -22,28 +22,28 @@ public class FirstName implements Parcelable{
     }
 
     public FirstName(JSONObject jObject) {
-        this.firstNameId = jObject.optString("id");
-        this.name = jObject.optString("number1");
-        this.gender = jObject.optString("number2");
-        this.origin = jObject.optString("number3");
+        this.id = jObject.optString("id");
+        this.firstName = jObject.optString("firstName");
         this.gender = jObject.optString("gender");
-        this.etymology = jObject.optString("descriptionBe");
+        this.origin = jObject.optString("origin");
+        this.gender = jObject.optString("gender");
+        this.etymology = jObject.optString("etymology");
     }
 
-    public String getFirstNameId() {
-        return firstNameId;
+    public String getId() {
+        return id;
     }
 
-    public void setFirstNameId(String firstNameId) {
-        this.firstNameId = firstNameId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getGender() {

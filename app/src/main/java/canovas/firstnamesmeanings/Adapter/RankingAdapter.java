@@ -37,7 +37,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull RankingAdapter.ViewHolder holder, int position) {
         holder.ranking_number_txtView.setText(String.valueOf(position+1));
-        holder.ranking_name_txtView.setText(mRankingNames.get(position).getName());
+        holder.ranking_name_txtView.setText(mRankingNames.get(position).getFirstName());
         holder.ranking_gender_txtView.setText(mRankingNames.get(position).getGender());
         holder.ranking_origin_txtView.setText(mRankingNames.get(position).getOrigin());
 

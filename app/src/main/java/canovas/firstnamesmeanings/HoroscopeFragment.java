@@ -82,7 +82,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
         }
 
         //If name was found
-        if (!name.getName().isEmpty()) {
+        if (!name.getFirstName().isEmpty()) {
             //Check if remember me box is ticked
             if (remember_checkBox.isChecked()) {
                 saveToPreferences(nameEntered);
