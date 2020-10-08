@@ -6,6 +6,8 @@
     style="?android:buttonBarButtonStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
+    android:layout_gravity="center"
     >
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,124 +20,167 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
+        app:layout_constraintBottom_toTopOf="@id/name_gender_ll"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
         />
+
+    <LinearLayout
+        android:id="@+id/name_gender_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/normal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/name_numbers_ll"
+        app:layout_constraintBottom_toTopOf="@id/name_origin_ll"
+        >
 
     <TextView
         android:id="@+id/name_gender_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:text="@string/name_gender_title"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/name_numbers_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_gender_txtView"
         />
 
     <TextView
         android:id="@+id/name_gender_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_gender_title_txtView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/name_numbers_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_ll"
-
         />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/name_numbers_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/normal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
+        app:layout_constraintLeft_toRightOf="@id/name_gender_ll"
+        app:layout_constraintRight_toLeftOf="@id/name_nameDay_ll"
+        app:layout_constraintBottom_toTopOf="@id/name_origin_ll"
+        >
 
     <TextView
         android:id="@+id/name_numbers_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_numbers_title"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_gender_title_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_nameDay_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_numbers_txtView"
-
+        android:textStyle="bold"
         />
 
     <TextView
         android:id="@+id/name_numbers_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_numbers_title_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_gender_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_name_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_ll"
         />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/name_nameDay_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/normal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
+        app:layout_constraintLeft_toRightOf="@id/name_numbers_ll"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/name_etymology_ll"
+        >
 
     <TextView
         android:id="@+id/name_nameDay_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_nameDay_title"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_numbers_title_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_origin_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_nameDay_txtView"
+        android:textStyle="bold"
+
         />
 
     <TextView
         android:id="@+id/name_nameDay_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_nameDay_title_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_numbers_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_origin_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_ll"
         />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/name_origin_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/normal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/name_gender_ll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/name_etymology_ll"
+        app:layout_constraintBottom_toTopOf="@id/name_ll"
+        >
 
     <TextView
         android:id="@+id/name_origin_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_origin_title"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_nameDay_title_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_etymology_title_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_origin_txtView"
+        android:textStyle="bold"
         />
 
     <TextView
         android:id="@+id/name_origin_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_origin_title_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_nameDay_txtView"
-        app:layout_constraintRight_toLeftOf="@id/name_etymology_txtView"
-        app:layout_constraintBottom_toTopOf="@id/name_ll"
         />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/name_etymology_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="@dimen/normal_margin_small"
+        app:layout_constraintTop_toBottomOf="@id/name_nameDay_ll"
+        app:layout_constraintLeft_toRightOf="@id/name_origin_ll"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/name_ll"
+        >
 
     <TextView
         android:id="@+id/name_etymology_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_etymology_title"
-        app:layout_constraintTop_toBottomOf="@id/name_name_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_origin_title_txtView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/name_etymology_txtView"
+        android:textStyle="bold"
         />
 
     <TextView
         android:id="@+id/name_etymology_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_etymology_title_txtView"
-        app:layout_constraintLeft_toRightOf="@id/name_origin_txtView"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/name_ll"
-
         />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/name_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name_etymology_txtView"
+        android:padding="@dimen/padding_small"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/name_origin_ll"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,10 +191,14 @@
             android:id="@+id/name_desc_be_title_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin_small"
             app:layout_constraintBottom_toTopOf="@id/name_desc_be_txtView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_etymology_txtView"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_regular"
             />
 
 
@@ -167,10 +216,14 @@
             android:id="@+id/name_desc_love_title_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin_small"
             app:layout_constraintBottom_toTopOf="@id/name_desc_love_txtView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_desc_be_txtView"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_regular"
             />
 
         <TextView
@@ -187,10 +240,14 @@
             android:id="@+id/name_desc_do_title_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin_small"
             app:layout_constraintBottom_toTopOf="@id/name_desc_do_txtView"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name_desc_love_txtView"
+            android:textStyle="bold"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/text_size_regular"
             />
 
         <TextView
@@ -204,10 +261,6 @@
             />
 
     </LinearLayout>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
