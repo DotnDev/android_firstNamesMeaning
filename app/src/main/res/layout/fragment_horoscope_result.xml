@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical"
     >
 
     <TextView
         android:id="@+id/horoscope_result_title_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,7 +36,6 @@
         app:layout_constraintTop_toBottomOf="@id/horoscope_result_title_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/horoscope_result_love_couple_rl"
         android:textSize="@dimen/text_size_regular"
         android:textStyle="bold"
         android:text="@string/horoscope_love"
@@ -62,8 +65,13 @@
             />
 
         <TextView
+            android:id="@+id/horoscope_result_love_couple_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_small"
+            android:textAlignment="center"
+            android:gravity="center"
             />
 
         <ImageView
@@ -88,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@id/horoscope_result_title_love_txtView"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/horoscope_result_love_couple_rl"
-        app:layout_constraintBottom_toTopOf="@id/horoscope_result_title_money_txtView"
+        app:layout_constraintBottom_toTopOf="@id/horoscope_result_title_health_txtView"
         >
 
         <ImageView
@@ -97,8 +105,13 @@
             />
 
         <TextView
+            android:id="@+id/horoscope_result_love_single_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_small"
+            android:textAlignment="center"
+            android:gravity="center"
             />
 
         <ImageView
@@ -114,7 +127,7 @@
         android:id="@+id/horoscope_result_title_money_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/horoscope_result_love_single_rl"
+        app:layout_constraintTop_toBottomOf="@id/horoscope_result_love_couple_rl"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/horoscope_result_title_health_txtView"
         app:layout_constraintBottom_toTopOf="@id/horoscope_result_money_rl"
@@ -142,8 +155,13 @@
             />
 
         <TextView
+            android:id="@+id/horoscope_result_money_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_small"
+            android:textAlignment="center"
+            android:gravity="center"
             />
 
         <ImageView
@@ -187,8 +205,13 @@
             />
 
         <TextView
+            android:id="@+id/horoscope_result_health_txtView"
+            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:textAlignment="center"
+            android:gravity="center"
             />
 
         <ImageView
@@ -218,6 +241,7 @@
         android:id="@+id/horoscope_result_lucky_number_rl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin_regular"
         app:layout_constraintTop_toBottomOf="@id/horoscope_result_title_number_txtView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -230,8 +254,12 @@
             />
 
         <TextView
+            android:id="@+id/horoscope_result_lucky_number_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:textAlignment="center"
+            android:gravity="center"
             />
 
         <ImageView
@@ -242,3 +270,4 @@
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

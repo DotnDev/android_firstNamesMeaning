@@ -184,12 +184,6 @@ public class MainActivity extends AppCompatActivity implements
         hideKeyboard();
     }
 
-    private void submitSearch() {
-        String query = searchInput.getText().toString();
-        String url = Config.URL_GET_NAME + "?firstName=" + query + "&token=" + token;
-        FirstNameFragment firstNameFragment = new FirstNameFragment();
-        this.getData(url,firstNameFragment, "firstName");
-    }
 
 
     @Override
@@ -285,6 +279,18 @@ public class MainActivity extends AppCompatActivity implements
                 fragment).addToBackStack(null).commit();
     }
 
+
+    private void submitSearch() {
+        String query = searchInput.getText().toString();
+        String url = Config.URL_GET_NAME + "?firstName=" + query + "&token=" + token;
+        FirstNameFragment firstNameFragment = new FirstNameFragment();
+
+        //Create bundle to attach data to fragment
+        Bundle bundle = new Bundle();
+
+        this.getData(url,firstNameFragment, bundle,"firstName");
+    }
+
     @Override
     public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed) {
 
@@ -296,7 +302,12 @@ public class MainActivity extends AppCompatActivity implements
                 + "&isSubscribed=" + isSubscribed
                 + "&token=" + token;
         HoroscopeResultFragment horoscopeResultFragment = new HoroscopeResultFragment();
-        this.getData(url, horoscopeResultFragment, "horoscope");
+
+        //Create bundle to attach data to fragment
+        Bundle bundle = new Bundle();
+        bundle.putString("firstName", firstName);
+
+        this.getData(url, horoscopeResultFragment, bundle,"horoscope");
     }
 
     @Override
@@ -306,18 +317,21 @@ public class MainActivity extends AppCompatActivity implements
         //Open new fragment with results
         String url = Config.URL_GET_COMPATIBILITY + "?firstName1=" + name1 + "&firstName2=" + name2 + "&token=" + token;
         CompatibilityResultFragment compatibilityResultFragment = new CompatibilityResultFragment();
-        this.getData(url, compatibilityResultFragment, "compatibility");
+
+        //Create bundle to attach data to fragment
+        Bundle bundle = new Bundle();
+
+        this.getData(url, compatibilityResultFragment, bundle, "compatibility");
     }
 
     //Request to get data from PHP app
-    public void getData(String url, final Fragment fragment, final String bundleName) {
+    public void getData(String url, final Fragment fragment, final Bundle bundle,final String bundleName) {
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                //Create bundle to attach data to fragment
-                Bundle bundle = new Bundle();
+                //Attach data to fragment
                 bundle.putString(bundleName, response);
 
                 //Attach bundle to frag
