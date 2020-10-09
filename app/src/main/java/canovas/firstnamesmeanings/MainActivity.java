@@ -320,6 +320,8 @@ public class MainActivity extends AppCompatActivity implements
 
         //Create bundle to attach data to fragment
         Bundle bundle = new Bundle();
+        bundle.putString("firstName1", name1);
+        bundle.putString("firstName2", name2);
 
         this.getData(url, compatibilityResultFragment, bundle, "compatibility");
     }
