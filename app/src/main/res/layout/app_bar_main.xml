@@ -55,7 +55,7 @@
 
             </RelativeLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
                 android:id="@+id/searchbar_rl"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -68,11 +68,8 @@
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
                     android:maxLength="20"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toLeftOf="@id/app_bar_search2"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
+                    android:layout_toStartOf="@id/app_bar_search2"
+                    android:layout_toLeftOf="@id/app_bar_search2" />
 
                 <ImageView
                     android:id="@+id/app_bar_search2"
@@ -86,10 +83,6 @@
                     android:contentDescription="@string/search_alt"
                     android:layout_alignRight="@id/app_bar_close_search"
                     android:layout_alignEnd="@id/app_bar_close_search"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/search_input"
-                    app:layout_constraintRight_toLeftOf="@id/app_bar_close_search"
                     />
 
                 <ImageView
@@ -104,12 +97,8 @@
                     android:adjustViewBounds="true"
                     android:maxWidth="30dp"
                     android:src="@drawable/ic_close"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/app_bar_search2"
-                    app:layout_constraintEnd_toEndOf="parent"
                     />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
 
