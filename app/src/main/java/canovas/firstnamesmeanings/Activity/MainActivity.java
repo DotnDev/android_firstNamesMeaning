@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements
     private DrawerLayout drawerLayout;
 
     RelativeLayout toolBar;
-    RelativeLayout searchBar;
+    ConstraintLayout searchBar;
     EditText searchInput;
     ImageView submitSearch_imgView;
     ImageView appBar_logo_imgView;
