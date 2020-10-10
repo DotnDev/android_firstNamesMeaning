@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import Models.FirstName;
 import canovas.firstnamesmeanings.R;
 
 
@@ -34,7 +33,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     }
 
     public interface OnButtonClickedListener {
-        public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed);
+         void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed);
     }
 
     @Nullable
@@ -42,7 +41,9 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
 
-        mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
+        if(getActivity()!=null){
+            mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
+        }
 
         Button horoscope_submit_btn = view.findViewById(R.id.horoscope_btn);
         firstName_editTxt = view.findViewById(R.id.horoscope_name_editTxt);

@@ -1,7 +1,6 @@
 package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,23 +12,14 @@ import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
-
 import Models.Horoscope;
 import canovas.firstnamesmeanings.R;
 
 
 public class HoroscopeResultFragment extends Fragment implements View.OnClickListener {
 
-    TextView horoscope_title_txtView;
-    TextView horoscope_love_couple_txtView;
-    TextView horoscope_love_single_txtView;
-    TextView horoscope_love_money_txtView;
-    TextView horoscope_love_health_txtView;
-    TextView horoscope_lucky_number_txtView;
-
-    String horoscopeData;
-    String firstName;
+    private String horoscopeData;
+    private String firstName;
 
 
     @Nullable
@@ -37,12 +27,12 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_horoscope_result, container, false);
 
-        horoscope_title_txtView = view.findViewById(R.id.horoscope_result_title_txtView);
-        horoscope_love_couple_txtView = view.findViewById(R.id.horoscope_result_love_couple_txtView);
-        horoscope_love_single_txtView = view.findViewById(R.id.horoscope_result_love_single_txtView);
-        horoscope_love_money_txtView = view.findViewById(R.id.horoscope_result_money_txtView);
-        horoscope_love_health_txtView = view.findViewById(R.id.horoscope_result_health_txtView);
-        horoscope_lucky_number_txtView = view.findViewById(R.id.horoscope_result_lucky_number_txtView);
+        TextView horoscope_title_txtView = view.findViewById(R.id.horoscope_result_title_txtView);
+        TextView horoscope_love_couple_txtView = view.findViewById(R.id.horoscope_result_love_couple_txtView);
+        TextView horoscope_love_single_txtView = view.findViewById(R.id.horoscope_result_love_single_txtView);
+        TextView horoscope_love_money_txtView = view.findViewById(R.id.horoscope_result_money_txtView);
+        TextView horoscope_love_health_txtView = view.findViewById(R.id.horoscope_result_health_txtView);
+        TextView horoscope_lucky_number_txtView = view.findViewById(R.id.horoscope_result_lucky_number_txtView);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {

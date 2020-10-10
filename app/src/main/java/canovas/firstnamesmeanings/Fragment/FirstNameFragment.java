@@ -11,32 +11,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import Models.Combination;
 import Models.FirstName;
 import canovas.firstnamesmeanings.R;
 
 public class FirstNameFragment extends Fragment {
 
-    private TextView name_txtView;
-    private TextView gender_txtView;
-    private TextView numbers_txtView;
-    private TextView nameDay_txtView;
-    private TextView origin_txtView;
-    private TextView etymology_txtView;
     private TextView title_descriptionBe_txtView;
     private TextView title_descriptionLove_txtView;
     private TextView title_descriptionDo_txtView;
-    private TextView descriptionBe_txtView;
-    private TextView descriptionLove_txtView;
-    private TextView descriptionDo_txtView;
 
-    String firstNameData;
+    private String firstNameData;
 
     @Nullable
     @Override
@@ -44,18 +28,18 @@ public class FirstNameFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_name, container, false);
 
-        name_txtView = view.findViewById(R.id.name_name_txtView);
-        gender_txtView = view.findViewById(R.id.name_gender_txtView);
-        numbers_txtView = view.findViewById(R.id.name_numbers_txtView);
-        nameDay_txtView = view.findViewById(R.id.name_nameDay_txtView);
-        origin_txtView = view.findViewById(R.id.name_origin_txtView);
-        etymology_txtView = view.findViewById(R.id.name_etymology_txtView);
+        TextView name_txtView = view.findViewById(R.id.name_name_txtView);
+        TextView gender_txtView = view.findViewById(R.id.name_gender_txtView);
+        TextView numbers_txtView = view.findViewById(R.id.name_numbers_txtView);
+        TextView nameDay_txtView = view.findViewById(R.id.name_nameDay_txtView);
+        TextView origin_txtView = view.findViewById(R.id.name_origin_txtView);
+        TextView etymology_txtView = view.findViewById(R.id.name_etymology_txtView);
         title_descriptionBe_txtView = view.findViewById(R.id.name_desc_be_title_txtView);
         title_descriptionLove_txtView = view.findViewById(R.id.name_desc_love_title_txtView);
         title_descriptionDo_txtView = view.findViewById(R.id.name_desc_do_title_txtView);
-        descriptionBe_txtView = view.findViewById(R.id.name_desc_be_txtView);
-        descriptionLove_txtView = view.findViewById(R.id.name_desc_love_txtView);
-        descriptionDo_txtView = view.findViewById(R.id.name_desc_do_txtView);
+        TextView descriptionBe_txtView = view.findViewById(R.id.name_desc_be_txtView);
+        TextView descriptionLove_txtView = view.findViewById(R.id.name_desc_love_txtView);
+        TextView descriptionDo_txtView = view.findViewById(R.id.name_desc_do_txtView);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {

@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     public interface OnButtonClickedListener {
-        public void onButtonClicked(View view);
+        void onButtonClicked(View view);
     }
 
     @Nullable

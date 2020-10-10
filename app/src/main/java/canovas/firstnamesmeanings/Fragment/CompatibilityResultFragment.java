@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,24 +13,14 @@ import androidx.fragment.app.Fragment;
 import com.google.gson.Gson;
 
 import Models.Compatibility;
-import Models.FirstName;
 import canovas.firstnamesmeanings.R;
 
 
 public class CompatibilityResultFragment extends Fragment implements View.OnClickListener {
 
-    String firstName1;
-    String firstName2;
-    String compatibilityData;
-
-    TextView compatibility_result_names_txtView;
-    TextView compatibility_result_love_txtView;
-    TextView compatibility_result_sexuality_txtView;
-    TextView compatibility_result_complicity_txtView;
-    TextView compatibility_result_fidelity_txtView;
-    TextView compatibility_result_friendship_txtView;
-    TextView compatibility_result_txt_txtView;
-
+    private String firstName1;
+    private String firstName2;
+    private String compatibilityData;
 
 
     @Nullable
@@ -40,13 +28,13 @@ public class CompatibilityResultFragment extends Fragment implements View.OnClic
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_compatibility_result, container, false);
 
-        compatibility_result_names_txtView = view.findViewById(R.id.compatibility_result_names_txtView);
-        compatibility_result_love_txtView = view.findViewById(R.id.compatibility_result_love_txtView);
-        compatibility_result_sexuality_txtView = view.findViewById(R.id.compatibility_result_sexuality_txtView);
-        compatibility_result_complicity_txtView = view.findViewById(R.id.compatibility_result_complicity_txtView);
-        compatibility_result_fidelity_txtView = view.findViewById(R.id.compatibility_result_fidelity_txtView);
-        compatibility_result_friendship_txtView = view.findViewById(R.id.compatibility_result_friendship_txtView);
-        compatibility_result_txt_txtView = view.findViewById(R.id.compatibility_result_txt_txtView);
+        TextView compatibility_result_names_txtView = view.findViewById(R.id.compatibility_result_names_txtView);
+        TextView compatibility_result_love_txtView = view.findViewById(R.id.compatibility_result_love_txtView);
+        TextView compatibility_result_sexuality_txtView = view.findViewById(R.id.compatibility_result_sexuality_txtView);
+        TextView compatibility_result_complicity_txtView = view.findViewById(R.id.compatibility_result_complicity_txtView);
+        TextView compatibility_result_fidelity_txtView = view.findViewById(R.id.compatibility_result_fidelity_txtView);
+        TextView compatibility_result_friendship_txtView = view.findViewById(R.id.compatibility_result_friendship_txtView);
+        TextView compatibility_result_txt_txtView = view.findViewById(R.id.compatibility_result_txt_txtView);
 
         Bundle bundle = this.getArguments();
         if (bundle != null) {
