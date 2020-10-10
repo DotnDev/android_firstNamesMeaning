@@ -34,6 +34,7 @@ import canovas.firstnamesmeanings.Fragment.FirstNameFragment;
 import canovas.firstnamesmeanings.Fragment.HomeFragment;
 import canovas.firstnamesmeanings.Fragment.HoroscopeFragment;
 import canovas.firstnamesmeanings.Fragment.HoroscopeResultFragment;
+import canovas.firstnamesmeanings.Fragment.SettingsFragment;
 import canovas.firstnamesmeanings.R;
 import canovas.firstnamesmeanings.Fragment.RankingFragment;
 import canovas.firstnamesmeanings.VolleySingleton;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnButtonClickedListener,
         HoroscopeFragment.OnButtonClickedListener,
-        CompatibilityFragment.OnButtonClickedListener {
+        CompatibilityFragment.OnButtonClickedListener, SettingsFragment.OnButtonClickedListener {
 
     Fragment fragment = null;
 
@@ -236,6 +237,11 @@ public class MainActivity extends AppCompatActivity implements
             compatibilityFragment.setOnButtonClickedListener(this);
         }
 
+        if (fragment instanceof SettingsFragment) {
+            SettingsFragment settingsFragment = (SettingsFragment) fragment;
+            settingsFragment.setOnButtonClickedListener(this);
+        }
+
     }
 
     //Button clicked in Home Fragment
@@ -270,6 +276,9 @@ public class MainActivity extends AppCompatActivity implements
                 fragment = new RankingFragment();
                 openNewFragment(fragment);
                 break;
+            case R.id.settings_reset_btn:
+                fragment = new SettingsFragment();
+                openNewFragment(fragment);
         }
 
     }
@@ -362,6 +371,19 @@ public class MainActivity extends AppCompatActivity implements
         });
 
         queue.add(request);
+
+    }
+
+    @Override
+    public void onResetButtonClicked(View view) {
+
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+
+        editor.clear();
+
+        editor.apply();
+
+        Toast.makeText(getApplicationContext(), "Name successfully reset", Toast.LENGTH_LONG).show();
 
     }
 }

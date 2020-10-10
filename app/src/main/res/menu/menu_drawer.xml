@@ -16,15 +16,8 @@
         android:title="@string/category_ranking" />
 
     <item
-        android:id="@+id/nav_numbers_txtView"
-        android:title="@string/category_numbers" />
+        android:id="@+id/nav_settings_txtView"
+        android:title="@string/navigation_settings" />
 
-    <item
-        android:id="@+id/nav_life_path_txtView"
-        android:title="@string/category_life_path" />
-
-    <item
-        android:id="@+id/nav_birth_day_txtView"
-        android:title="@string/category_birth_day" />
 
 </menu>
