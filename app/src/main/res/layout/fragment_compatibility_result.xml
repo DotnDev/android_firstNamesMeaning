@@ -1,64 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background"
-    android:padding="@dimen/padding_regular"
-    >
-<LinearLayout
+    android:padding="@dimen/padding_small"
+    android:layout_gravity="center">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
      >
 
     <TextView
         android:id="@+id/compatibility_result_names_txtView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_love_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="@dimen/text_title"
         android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
         />
 
-    <TableLayout
+    <LinearLayout
+        android:id="@+id/compatibility_result_love_ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/compatibility_result_friendship_ll"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_names_txtView"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_sexuality_ll"
         >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/normal_margin_regular"
-            >
+        <TextView
+            android:id="@+id/compatibility_result_love_title_txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/compatibility_result_love"
+            />
 
-            <TextView
-                android:id="@+id/compatibility_result_love_title_txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_small"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_regular"
-                android:text="@string/compatibility_result_love"
-                />
+        <TextView
+            android:id="@+id/compatibility_result_love_txtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:background="@drawable/border_white_round_fill"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_regular"
+            />
+
+    </LinearLayout>
 
 
-            <TextView
-                android:id="@+id/compatibility_result_love_txtView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_small"
-                android:background="@drawable/border_white_round_fill"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_regular"
-                />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/normal_margin_regular"
-            >
+    <LinearLayout
+        android:id="@+id/compatibility_result_friendship_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/compatibility_result_love_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_names_txtView"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_complicity_ll"
+        >
             <TextView
                 android:id="@+id/compatibility_result_friendship_title_txtView"
                 android:layout_width="wrap_content"
@@ -78,12 +92,21 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_regular"
                 />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/normal_margin_regular"
-            >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/compatibility_result_sexuality_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_love_ll"
+        app:layout_constraintEnd_toStartOf="@id/compatibility_result_complicity_ll"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_fidelity_ll"
+        >
+
             <TextView
                 android:id="@+id/compatibility_result_sexuality_title_txtView"
                 android:layout_width="wrap_content"
@@ -103,13 +126,21 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_regular"
                 />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/normal_margin_regular"
-            >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/compatibility_result_complicity_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/compatibility_result_sexuality_ll"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_friendship_ll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_fidelity_ll"
+        >
+
             <TextView
                 android:id="@+id/compatibility_result_complicity_title_txtView"
                 android:layout_width="wrap_content"
@@ -129,14 +160,20 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_regular"
                 />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/normal_margin_regular"
+    </LinearLayout>
 
-            >
+    <LinearLayout
+        android:id="@+id/compatibility_result_fidelity_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_complicity_ll"
+        app:layout_constraintBottom_toTopOf="@id/compatibility_result_txt_txtView"
+        >
             <TextView
                 android:id="@+id/compatibility_result_fidelity_title_txtView"
                 android:layout_width="wrap_content"
@@ -156,21 +193,23 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_regular"
                 />
+    </LinearLayout>
 
-        </TableRow>
-
-    </TableLayout>
 
     <TextView
         android:id="@+id/compatibility_result_txt_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/compatibility_result_fidelity_ll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_margin="@dimen/normal_margin_regular"
         android:padding="@dimen/padding_small"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_regular"
         />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
