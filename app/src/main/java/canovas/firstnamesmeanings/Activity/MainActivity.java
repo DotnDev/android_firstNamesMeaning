@@ -194,9 +194,11 @@ public class MainActivity extends AppCompatActivity implements
                 openNewFragment(fragment);
                 break;
             case R.id.nav_horoscope_txtView:
-                fragment = new HoroscopeFragment();
-                openNewFragment(fragment);
+                horoscopeSelect();
                 break;
+            case R.id.nav_settings_txtView:
+                fragment = new SettingsFragment();
+                openNewFragment(fragment);
         }
 
         this.drawerLayout.closeDrawer(GravityCompat.START);
@@ -253,20 +255,7 @@ public class MainActivity extends AppCompatActivity implements
                 enableInput();
                 break;
             case R.id.home_horoscope_btn:
-
-                //Check if name is saved in shared prefs
-                String nameSaved = checkSharedPreferences();
-
-                //Send result fragment straight away
-                if(!nameSaved.equals("")){
-                    onHoroscopeSubmit(nameSaved,false);
-
-                    //Else open main fragment
-                }else{
-                    fragment = new HoroscopeFragment();
-                    openNewFragment(fragment);
-                }
-
+                horoscopeSelect();
                 break;
             case R.id.home_compatibility_btn:
                 fragment = new CompatibilityFragment();
@@ -276,11 +265,23 @@ public class MainActivity extends AppCompatActivity implements
                 fragment = new RankingFragment();
                 openNewFragment(fragment);
                 break;
-            case R.id.settings_reset_btn:
-                fragment = new SettingsFragment();
-                openNewFragment(fragment);
         }
 
+    }
+
+    public void horoscopeSelect(){
+        //Check if name is saved in shared prefs
+        String nameSaved = checkSharedPreferences();
+
+        //Send result fragment straight away
+        if(!nameSaved.equals("")){
+            onHoroscopeSubmit(nameSaved,false);
+
+            //Else open main fragment
+        }else{
+            fragment = new HoroscopeFragment();
+            openNewFragment(fragment);
+        }
     }
 
     public String checkSharedPreferences(){
