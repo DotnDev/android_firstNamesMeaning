@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -9,21 +9,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -31,17 +26,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
+import canovas.firstnamesmeanings.Config.Config;
+import canovas.firstnamesmeanings.Fragment.CompatibilityFragment;
+import canovas.firstnamesmeanings.Fragment.CompatibilityResultFragment;
+import canovas.firstnamesmeanings.Fragment.FirstNameFragment;
+import canovas.firstnamesmeanings.Fragment.HomeFragment;
+import canovas.firstnamesmeanings.Fragment.HoroscopeFragment;
+import canovas.firstnamesmeanings.Fragment.HoroscopeResultFragment;
+import canovas.firstnamesmeanings.MyRequest;
+import canovas.firstnamesmeanings.R;
+import canovas.firstnamesmeanings.Fragment.RankingFragment;
+import canovas.firstnamesmeanings.VolleySingleton;
 
 public class MainActivity extends AppCompatActivity implements
         View.OnClickListener,
@@ -55,9 +50,7 @@ public class MainActivity extends AppCompatActivity implements
     private MyRequest mMyRequest;
     private RequestQueue queue;
     private String token;
-
     private Toolbar toolbar;
-
     private DrawerLayout drawerLayout;
 
     RelativeLayout toolBar;

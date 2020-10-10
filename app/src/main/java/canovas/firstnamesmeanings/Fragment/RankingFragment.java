@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import Models.FirstName;
 import canovas.firstnamesmeanings.Adapter.RankingAdapter;
+import canovas.firstnamesmeanings.R;
 
 public class RankingFragment extends Fragment implements View.OnClickListener {
 

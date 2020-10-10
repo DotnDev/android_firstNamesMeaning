@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import Models.FirstName;
+import canovas.firstnamesmeanings.R;
 
 
 public class CompatibilityFragment extends Fragment implements View.OnClickListener {

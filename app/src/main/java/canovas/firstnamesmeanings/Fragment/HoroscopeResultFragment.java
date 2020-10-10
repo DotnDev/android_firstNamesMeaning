@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 import Models.Horoscope;
+import canovas.firstnamesmeanings.R;
 
 
 public class HoroscopeResultFragment extends Fragment implements View.OnClickListener {

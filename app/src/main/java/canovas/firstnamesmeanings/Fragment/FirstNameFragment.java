@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +19,7 @@ import java.util.List;
 
 import Models.Combination;
 import Models.FirstName;
+import canovas.firstnamesmeanings.R;
 
 public class FirstNameFragment extends Fragment {
 

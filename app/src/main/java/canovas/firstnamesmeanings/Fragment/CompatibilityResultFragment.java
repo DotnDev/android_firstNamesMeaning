@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +16,7 @@ import com.google.gson.Gson;
 
 import Models.Compatibility;
 import Models.FirstName;
+import canovas.firstnamesmeanings.R;
 
 
 public class CompatibilityResultFragment extends Fragment implements View.OnClickListener {

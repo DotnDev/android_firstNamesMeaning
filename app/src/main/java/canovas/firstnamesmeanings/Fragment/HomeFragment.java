@@ -1,4 +1,4 @@
-package canovas.firstnamesmeanings;
+package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import canovas.firstnamesmeanings.R;
 
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
