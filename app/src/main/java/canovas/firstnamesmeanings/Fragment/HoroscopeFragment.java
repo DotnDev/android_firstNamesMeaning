@@ -21,8 +21,6 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
 
     private OnButtonClickedListener mCallback;
     private EditText firstName_editTxt;
-    private EditText email_editTxt;
-    private CheckBox consent_checkBox;
     private CheckBox remember_checkBox;
 
     private SharedPreferences mSharedPreferences;
@@ -33,7 +31,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     }
 
     public interface OnButtonClickedListener {
-         void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed);
+        void onHoroscopeSubmit(String firstName);
     }
 
     @Nullable
@@ -41,14 +39,12 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
 
-        if(getActivity()!=null){
+        if (getActivity() != null) {
             mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
         }
 
         Button horoscope_submit_btn = view.findViewById(R.id.horoscope_btn);
         firstName_editTxt = view.findViewById(R.id.horoscope_name_editTxt);
-        email_editTxt = view.findViewById(R.id.horoscope_email_editTxt);
-        consent_checkBox = view.findViewById(R.id.horoscope_consent_checkBox);
         remember_checkBox = view.findViewById(R.id.horoscope_remember_checkBox);
 
         horoscope_submit_btn.setOnClickListener(this);
@@ -70,32 +66,18 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     private void checkInputsAndCheckboxes() {
 
         //Keeping this boolean true as long as user does not fill in the email
-        boolean isConsent = true;
-        boolean isSubscribed = false;
         String nameEntered = firstName_editTxt.getText().toString();
-        String email = email_editTxt.getText().toString();
 
         //If name is empty
-        if(nameEntered.isEmpty()){
+        if (nameEntered.isEmpty()) {
             Toast.makeText(getActivity(), "Name cannot be empty", Toast.LENGTH_LONG).show();
-        }else{
+        } else {
             //Check if remember me box is ticked
             if (remember_checkBox.isChecked()) {
                 saveToPreferences(nameEntered);
             }
 
-            //Then check if email is filled in + consent is ticked
-            if (!email.isEmpty() && consent_checkBox.isChecked()) {
-                isSubscribed = true;
-            }else if (!email.isEmpty() && !consent_checkBox.isChecked()){
-                isConsent = false;
-                Toast.makeText(getActivity(), "Please tick the consent box to subscribe to the newsletter", Toast.LENGTH_LONG).show();
-            }
-
-            //Check if consent is fine
-            if (isConsent) {
-                mCallback.onHoroscopeSubmit(nameEntered, email, isSubscribed);
-            }
+            mCallback.onHoroscopeSubmit(nameEntered);
         }
     }
 

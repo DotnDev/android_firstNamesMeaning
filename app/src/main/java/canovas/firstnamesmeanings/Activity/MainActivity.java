@@ -284,14 +284,12 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onHoroscopeSubmit(String firstName, String email, boolean isSubscribed) {
+    public void onHoroscopeSubmit(String firstName) {
 
         //Search name in DB
         //Launch new fragment with results
         String url = Config.URL_GET_HOROSCOPE
                 + "?firstName=" + firstName
-                + "&email=" + email
-                + "&isSubscribed=" + isSubscribed
                 + "&token=" + token;
         HoroscopeResultFragment horoscopeResultFragment = new HoroscopeResultFragment();
 
