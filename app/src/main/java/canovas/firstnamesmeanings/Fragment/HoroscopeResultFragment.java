@@ -1,5 +1,6 @@
 package canovas.firstnamesmeanings.Fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,11 +21,19 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
 
     private String horoscopeData;
     private String firstName;
+    private boolean saveName;
+
+    private SharedPreferences mSharedPreferences;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        if (getActivity() != null) {
+            mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
+        }
+
         View view = inflater.inflate(R.layout.fragment_horoscope_result, container, false);
 
         TextView horoscope_title_txtView = view.findViewById(R.id.horoscope_result_title_txtView);
@@ -38,6 +47,11 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
         if (bundle != null) {
             horoscopeData = bundle.getString("horoscope", "");
             firstName = bundle.getString("firstName", "");
+            saveName = bundle.getBoolean("saveName", false);
+
+            if(saveName){
+                saveToPreferences(firstName);
+            }
         }
 
 
@@ -68,5 +82,15 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
     @Override
     public void onClick(View view) {
 
+    }
+
+
+    //Save name in SharedPrefs
+    private void saveToPreferences(String name) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+
+        editor.putString("name", name);
+
+        editor.apply();
     }
 }

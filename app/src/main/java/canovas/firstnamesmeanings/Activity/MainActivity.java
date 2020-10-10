@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -33,7 +34,6 @@ import canovas.firstnamesmeanings.Fragment.FirstNameFragment;
 import canovas.firstnamesmeanings.Fragment.HomeFragment;
 import canovas.firstnamesmeanings.Fragment.HoroscopeFragment;
 import canovas.firstnamesmeanings.Fragment.HoroscopeResultFragment;
-import canovas.firstnamesmeanings.MyRequest;
 import canovas.firstnamesmeanings.R;
 import canovas.firstnamesmeanings.Fragment.RankingFragment;
 import canovas.firstnamesmeanings.VolleySingleton;
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements
 
     Fragment fragment = null;
 
-    private MyRequest mMyRequest;
     private RequestQueue queue;
     private String token;
     private Toolbar toolbar;
@@ -64,10 +63,15 @@ public class MainActivity extends AppCompatActivity implements
     public static String CURRENT_TAG;
     private static final String TAG_HOME = "home";
 
+    private SharedPreferences mSharedPreferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mSharedPreferences = this.getApplicationContext().getSharedPreferences("userPrefs", 0);
 
         //Click on app bar logo => back to home fragment
         appBar_logo_imgView = findViewById(R.id.app_bar_logo);
@@ -92,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements
         closeUpSearch();
 
         queue = VolleySingleton.getInstance(this).getRequestQueue();
-        mMyRequest = new MyRequest(this, queue);
         token = Config.ANDROID_TOKEN;
 
     }
@@ -244,8 +247,20 @@ public class MainActivity extends AppCompatActivity implements
                 enableInput();
                 break;
             case R.id.home_horoscope_btn:
-                fragment = new HoroscopeFragment();
-                openNewFragment(fragment);
+
+                //Check if name is saved in shared prefs
+                String nameSaved = checkSharedPreferences();
+
+                //Send result fragment straight away
+                if(!nameSaved.equals("")){
+                    onHoroscopeSubmit(nameSaved,false);
+
+                    //Else open main fragment
+                }else{
+                    fragment = new HoroscopeFragment();
+                    openNewFragment(fragment);
+                }
+
                 break;
             case R.id.home_compatibility_btn:
                 fragment = new CompatibilityFragment();
@@ -257,6 +272,10 @@ public class MainActivity extends AppCompatActivity implements
                 break;
         }
 
+    }
+
+    public String checkSharedPreferences(){
+        return mSharedPreferences.getString("name","");
     }
 
     public void hideKeyboard() {
@@ -284,7 +303,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onHoroscopeSubmit(String firstName) {
+    public void onHoroscopeSubmit(String firstName, boolean saveName) {
 
         //Search name in DB
         //Launch new fragment with results
@@ -296,6 +315,7 @@ public class MainActivity extends AppCompatActivity implements
         //Create bundle to attach data to fragment
         Bundle bundle = new Bundle();
         bundle.putString("firstName", firstName);
+        bundle.putBoolean("saveName", saveName);
 
         this.getData(url, horoscopeResultFragment, bundle,"horoscope");
     }

@@ -52,6 +52,7 @@ To subscribe to our daily horoscope newsletter, enter your email as well!</strin
     <string name="widget_horoscope_btn">Get my horoscope</string>
     <string name="widget_horoscope_compulsory">* Compulsory fields</string>
     <string name="horoscope_remember">Save my name</string>
+    <string name="horoscope_remember_info">By ticking this box, you won\'t have to enter your name next time. To reset this, go to Settings!</string>
 
     <string name="horoscope_result_title">Today\'s horoscope for</string>
     <string name="horoscope_love">Love</string>

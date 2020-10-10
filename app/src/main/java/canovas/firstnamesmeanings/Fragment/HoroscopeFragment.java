@@ -23,7 +23,6 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     private EditText firstName_editTxt;
     private CheckBox remember_checkBox;
 
-    private SharedPreferences mSharedPreferences;
 
 
     public void setOnButtonClickedListener(OnButtonClickedListener mCallback) {
@@ -31,17 +30,13 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
     }
 
     public interface OnButtonClickedListener {
-        void onHoroscopeSubmit(String firstName);
+        void onHoroscopeSubmit(String firstName, boolean saveName);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_horoscope_main, container, false);
-
-        if (getActivity() != null) {
-            mSharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userPrefs", 0);
-        }
 
         Button horoscope_submit_btn = view.findViewById(R.id.horoscope_btn);
         firstName_editTxt = view.findViewById(R.id.horoscope_name_editTxt);
@@ -67,6 +62,7 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
 
         //Keeping this boolean true as long as user does not fill in the email
         String nameEntered = firstName_editTxt.getText().toString();
+        boolean saveName = false;
 
         //If name is empty
         if (nameEntered.isEmpty()) {
@@ -74,19 +70,12 @@ public class HoroscopeFragment extends Fragment implements View.OnClickListener 
         } else {
             //Check if remember me box is ticked
             if (remember_checkBox.isChecked()) {
-                saveToPreferences(nameEntered);
+                saveName = true;
             }
 
-            mCallback.onHoroscopeSubmit(nameEntered);
+            mCallback.onHoroscopeSubmit(nameEntered, saveName);
         }
     }
 
-    //Save name in SharedPrefs
-    private void saveToPreferences(String name) {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
 
-        editor.putString("name", name);
-
-        editor.apply();
-    }
 }
