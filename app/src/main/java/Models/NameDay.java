@@ -5,11 +5,15 @@ import android.os.Parcelable;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class NameDay implements Parcelable{
 
     private String nameDayId;
     private int day;
     private int month;
+
+    private ArrayList<FirstName> firstNames;
 
     private NameDay(Parcel in) {
     }
@@ -42,6 +46,14 @@ public class NameDay implements Parcelable{
 
     public void setMonth(int month) {
         this.month = month;
+    }
+
+    public ArrayList<FirstName> getFirstNames() {
+        return firstNames;
+    }
+
+    public void setFirstNames(ArrayList<FirstName> firstNames) {
+        this.firstNames = firstNames;
     }
 
     public static final Creator<NameDay> CREATOR = new Creator<NameDay>() {

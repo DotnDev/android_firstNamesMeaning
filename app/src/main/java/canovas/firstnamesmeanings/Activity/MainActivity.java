@@ -233,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements
             compatibilityFragment.setOnButtonClickedListener(this);
         }
 
-
     }
 
     //Button clicked in Home Fragment

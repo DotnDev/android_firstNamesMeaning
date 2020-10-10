@@ -1,6 +1,7 @@
 package canovas.firstnamesmeanings.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +13,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import Models.FirstName;
+import Models.Ranking;
+import canovas.firstnamesmeanings.Fragment.HoroscopeFragment;
+import canovas.firstnamesmeanings.Fragment.RankingFragment;
 import canovas.firstnamesmeanings.R;
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder>{
 
-    private ArrayList<FirstName> mRankingNames;
+    private ArrayList<Ranking> mRankingNames;
     private Context mContext;
 
-    public RankingAdapter(ArrayList<FirstName> mRankingNames, Context mContext){
+    public RankingAdapter(ArrayList<Ranking> mRankingNames, Context mContext){
         this.mRankingNames = mRankingNames;
         this.mContext = mContext;
     }
-
 
     //Inflate the layout of the RecyclerView
     @NonNull
@@ -37,9 +40,12 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull RankingAdapter.ViewHolder holder, int position) {
         holder.ranking_number_txtView.setText(String.valueOf(position+1));
-        holder.ranking_name_txtView.setText(mRankingNames.get(position).getFirstName());
-        holder.ranking_gender_txtView.setText(mRankingNames.get(position).getGender());
-        holder.ranking_origin_txtView.setText(mRankingNames.get(position).getOrigin());
+
+        Log.d("ranking", "RANKING = " + mRankingNames.get(position));
+
+        // holder.ranking_name_txtView.setText(mRankingNames.get(position).getFirstName());
+       // holder.ranking_gender_txtView.setText(mRankingNames.get(position).getFirstName());
+      //  holder.ranking_origin_txtView.setText(mRankingNames.get(position).getOrigin());
 
     }
 
@@ -63,6 +69,8 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
             ranking_name_txtView = itemView.findViewById(R.id.ranking_row_name_txtView);
             ranking_gender_txtView = itemView.findViewById(R.id.ranking_row_gender_txtView);
             ranking_origin_txtView = itemView.findViewById(R.id.ranking_row_origin_txtView);
+
+            itemView.setOnClickListener(this);
         }
 
         @Override
