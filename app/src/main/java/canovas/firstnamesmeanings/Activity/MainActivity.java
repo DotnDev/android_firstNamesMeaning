@@ -1,7 +1,6 @@
 package canovas.firstnamesmeanings.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,16 +19,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.Locale;
-
 import canovas.firstnamesmeanings.Config.Config;
 import canovas.firstnamesmeanings.Fragment.CompatibilityFragment;
 import canovas.firstnamesmeanings.Fragment.CompatibilityResultFragment;
@@ -197,6 +192,10 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.nav_horoscope_txtView:
                 horoscopeSelect();
+                break;
+            case R.id.nav_ranking_txtView:
+                fragment = new RankingFragment();
+                openNewFragment(fragment);
                 break;
             case R.id.nav_settings_txtView:
                 fragment = new SettingsFragment();
