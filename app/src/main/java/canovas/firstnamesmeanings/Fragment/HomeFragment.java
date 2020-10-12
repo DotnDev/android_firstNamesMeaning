@@ -35,7 +35,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        TextView nameDay_date = view.findViewById(R.id.home_nameDay_date_txtView);
         Button home_search_btn = view.findViewById(R.id.home_search_btn);
         Button home_horoscope_btn = view.findViewById(R.id.home_horoscope_btn);
         Button home_compatibility_btn = view.findViewById(R.id.home_compatibility_btn);
@@ -46,18 +45,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         home_compatibility_btn.setOnClickListener(this);
         home_ranking_btn.setOnClickListener(this);
 
-        nameDay_date.setText(getDate());
-        //Get name of the day
-
         return view;
 
-    }
-
-    //Get today's date
-    private String getDate() {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("EE dd MMM yyyy", Locale.FRENCH);
-        return sdf.format(new Date());
     }
 
 
