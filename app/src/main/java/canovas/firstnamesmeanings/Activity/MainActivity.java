@@ -25,6 +25,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
+import com.google.gson.Gson;
+
+import Models.FirstName;
 import canovas.firstnamesmeanings.Config.Config;
 import canovas.firstnamesmeanings.Fragment.CompatibilityFragment;
 import canovas.firstnamesmeanings.Fragment.CompatibilityResultFragment;
@@ -42,7 +45,9 @@ public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         HomeFragment.OnButtonClickedListener,
         HoroscopeFragment.OnButtonClickedListener,
-        CompatibilityFragment.OnButtonClickedListener, SettingsFragment.OnButtonClickedListener {
+        CompatibilityFragment.OnButtonClickedListener,
+        RankingFragment.OnButtonClickedListener,
+        SettingsFragment.OnButtonClickedListener {
 
     Fragment fragment = null;
 
@@ -382,6 +387,21 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+    //Ranking fragment click method
+    @Override
+    public void onNameClicked(FirstName firstName) {
+
+        Gson gson = new Gson();
+        String firstNameString =  gson.toJson(firstName);
+       Bundle bundle = new Bundle();
+
+        bundle.putString("firstName",firstNameString);
+       fragment = new FirstNameFragment();
+       fragment.setArguments(bundle);
+       openNewFragment(fragment);
+    }
+
+    //Settings fragment click method
     @Override
     public void onResetButtonClicked(View view) {
 

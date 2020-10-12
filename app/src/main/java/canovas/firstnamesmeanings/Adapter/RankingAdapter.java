@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -22,10 +23,12 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
 
     private ArrayList<Ranking> mRankingNames;
     private Context mContext;
+    private OnRankingNameClickListener mOnClickListener;
 
-    public RankingAdapter(ArrayList<Ranking> mRankingNames, Context mContext){
+    public RankingAdapter(ArrayList<Ranking> mRankingNames, Context mContext, OnRankingNameClickListener mOnClickListener){
         this.mRankingNames = mRankingNames;
         this.mContext = mContext;
+        this.mOnClickListener = mOnClickListener;
     }
 
     //Inflate the layout of the RecyclerView
@@ -34,7 +37,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     public RankingAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_ranking, parent, false);
 
-        return new ViewHolder(v);    }
+        return new ViewHolder(v, mOnClickListener);    }
 
     //Binds the Views and the data together
     @Override
@@ -59,22 +62,33 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
         TextView ranking_gender_txtView;
         TextView ranking_origin_txtView;
 
-        public ViewHolder(@NonNull View itemView) {
+        OnRankingNameClickListener mOnClickListener;
+
+        public ViewHolder(@NonNull View itemView,OnRankingNameClickListener onClickListener) {
             super(itemView);
+
+            ConstraintLayout ranking_layout = itemView.findViewById(R.id.ranking_row_cl);
 
             ranking_number_txtView = itemView.findViewById(R.id.ranking_row_number_txtView);
             ranking_name_txtView = itemView.findViewById(R.id.ranking_row_name_txtView);
             ranking_gender_txtView = itemView.findViewById(R.id.ranking_row_gender_txtView);
             ranking_origin_txtView = itemView.findViewById(R.id.ranking_row_origin_txtView);
 
-            itemView.setOnClickListener(this);
+            this.mOnClickListener = onClickListener;
+
+            ranking_layout.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
 
-            //Go to name fragment
+            mOnClickListener.onRowClicked(getAdapterPosition());
 
         }
+    }
+
+    public interface OnRankingNameClickListener {
+        void onRowClicked(int position);
+
     }
 }

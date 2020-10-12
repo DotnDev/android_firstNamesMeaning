@@ -1,5 +1,6 @@
 package canovas.firstnamesmeanings.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
 import android.util.Log;
@@ -26,20 +27,23 @@ import Models.Ranking;
 import canovas.firstnamesmeanings.Adapter.RankingAdapter;
 import canovas.firstnamesmeanings.R;
 
-public class RankingFragment extends Fragment implements View.OnClickListener {
+public class RankingFragment extends Fragment implements View.OnClickListener, RankingAdapter.OnRankingNameClickListener {
 
-    private RankingFragment.OnButtonClickedListener mCallback;
+    private OnButtonClickedListener mCallback;
     private RankingAdapter rankingAdapter;
     private ArrayList<Ranking> mRankingNames = new ArrayList<>();
-    private String rankingData;
 
+    //Method from the adapter
+    @Override
+    public void onRowClicked(int position) {
+        FirstName firstName = mRankingNames.get(position).getFirstName();
 
-    public void setOnButtonClickedListener(RankingFragment.OnButtonClickedListener mCallback) {
-        this.mCallback = mCallback;
+        mCallback.onNameClicked(firstName);
     }
 
+    //Interface to send action back to activity
     public interface OnButtonClickedListener {
-        void onNameClicked(String firstName);
+        void onNameClicked(FirstName firstName);
     }
 
     @Nullable
@@ -60,7 +64,7 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
 
     private void setRecyclerView(View v) {
 
-        rankingAdapter = new RankingAdapter(mRankingNames, getActivity());
+        rankingAdapter = new RankingAdapter(mRankingNames, getActivity(), this);
         RecyclerView recyclerview = v.findViewById(R.id.ranking_recyclerView);
         recyclerview.setHasFixedSize(false);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -73,7 +77,7 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
         //Get data
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            rankingData = bundle.getString("ranking");
+            String rankingData = bundle.getString("ranking");
 
             JSONArray jsonArray = new JSONArray((rankingData));
 
@@ -91,6 +95,16 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            mCallback = (OnButtonClickedListener) getActivity();
+        } catch (ClassCastException e) {
+            Log.e("onAttachException", "onAttach: ClassCastException:" + e.getMessage());
+        }
     }
 
 }
