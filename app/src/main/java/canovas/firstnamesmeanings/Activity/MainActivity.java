@@ -195,7 +195,9 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.nav_ranking_txtView:
                 fragment = new RankingFragment();
-                openNewFragment(fragment);
+                Bundle bundle = new Bundle();
+                String url = Config.URL_GET_RANKING + "?token=" + token;
+                getData(url,fragment,bundle,"ranking");
                 break;
             case R.id.nav_settings_txtView:
                 fragment = new SettingsFragment();
@@ -357,11 +359,9 @@ public class MainActivity extends AppCompatActivity implements
             public void onResponse(String response) {
 
                 //Attach data to fragment
-                assert bundle != null;
                 bundle.putString(bundleName, response);
 
                 //Attach bundle to frag
-                assert fragment != null;
                 fragment.setArguments(bundle);
                 openNewFragment(fragment);
 
