@@ -7,5 +7,4 @@ public class Config {
     public static final String URL_GET_COMPATIBILITY = "http://http5.republique-media.com/android/get_compatibility";
     public static final String URL_GET_HOROSCOPE = "http://http5.republique-media.com/android/get_horoscope";
     public static final String URL_GET_RANKING = "http://http5.republique-media.com/android/get_ranking";
-    public static final String URL_GET_NAME_DAY = "http://http5.republique-media.com/android/get_nameDay";
 }
