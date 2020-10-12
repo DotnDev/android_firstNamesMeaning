@@ -67,11 +67,23 @@ public class HoroscopeResultFragment extends Fragment implements View.OnClickLis
         //Split love string into single/couple
         String[] horoscope_couples_singles = horoscope.getHoroscopeLove().split("(?=Singles)");
 
+        String[] descriptionsToFormat = {
+                horoscope_couples_singles[0],
+                horoscope_couples_singles[1],
+                horoscope.getHoroscopeMoney(),
+                horoscope.getHoroscopeHealth()
+        };
+
+        for(int i=0;i<descriptionsToFormat.length;i++){
+            descriptionsToFormat[i] = descriptionsToFormat[i].replace("<strong>%s</strong>", firstName);
+            descriptionsToFormat[i] = descriptionsToFormat[i].replace("<br/>", "");
+        }
+
         //Assign texts to views
-        horoscope_love_couple_txtView.setText(horoscope_couples_singles[0]);
-        horoscope_love_single_txtView.setText(horoscope_couples_singles[1]);
-        horoscope_love_money_txtView.setText(horoscope.getHoroscopeMoney());
-        horoscope_love_health_txtView.setText(horoscope.getHoroscopeHealth());
+        horoscope_love_couple_txtView.setText(descriptionsToFormat[0]);
+        horoscope_love_single_txtView.setText(descriptionsToFormat[1]);
+        horoscope_love_money_txtView.setText(descriptionsToFormat[2]);
+        horoscope_love_health_txtView.setText(descriptionsToFormat[3]);
         horoscope_lucky_number_txtView.setText(String.valueOf(horoscope.getHoroscopeNumberOfTheDay()));
 
         return view;
