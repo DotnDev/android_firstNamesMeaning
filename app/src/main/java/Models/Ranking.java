@@ -9,7 +9,7 @@ public class Ranking implements Parcelable{
 
     private String id;
     private int count;
-    private JSONObject firstName;
+    private FirstName firstName;
     private int rankingYear;
 
 
@@ -19,7 +19,7 @@ public class Ranking implements Parcelable{
     public Ranking(JSONObject jObject) {
         this.id = jObject.optString("id");
         this.count = jObject.optInt("count");
-        this.firstName = jObject.optJSONObject("firstName");
+        //this.firstName = jObject.optString("firstName");
         this.rankingYear = jObject.optInt("rankingYear");
     }
 
@@ -39,11 +39,11 @@ public class Ranking implements Parcelable{
         this.count = count;
     }
 
-    public JSONObject getFirstName() {
+    public FirstName getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(JSONObject firstName) {
+    public void setFirstName(FirstName firstName) {
         this.firstName = firstName;
     }
 

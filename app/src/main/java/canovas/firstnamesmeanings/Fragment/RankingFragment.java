@@ -2,6 +2,7 @@ package canovas.firstnamesmeanings.Fragment;
 
 import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import Models.FirstName;
 import Models.Horoscope;
@@ -26,7 +31,7 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
     private RankingFragment.OnButtonClickedListener mCallback;
     private RankingAdapter rankingAdapter;
     private ArrayList<Ranking> mRankingNames = new ArrayList<>();
-    private ArrayList<String> rankingData;
+    private String rankingData;
 
 
     public void setOnButtonClickedListener(RankingFragment.OnButtonClickedListener mCallback) {
@@ -43,7 +48,11 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_ranking, container, false);
 
         setRecyclerView(view);
-        getRankingList();
+        try {
+            getRankingList();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         return view;
 
@@ -59,21 +68,21 @@ public class RankingFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void getRankingList(){
+    private void getRankingList() throws JSONException {
 
         //Get data
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            rankingData = bundle.getStringArrayList("ranking");
+            rankingData = bundle.getString("ranking");
 
-            assert rankingData != null;
-            for(String rankingRow : rankingData){
+            JSONArray jsonArray = new JSONArray((rankingData));
 
-                //Get JSON data into FirstName Model thanks to Gson library
+            for(int i=0;i<jsonArray.length();i++){
                 Gson gson = new Gson();
-                 Ranking ranking = gson.fromJson(rankingRow,Ranking.class);
-                 mRankingNames.add(ranking);
+                Ranking ranking = gson.fromJson(jsonArray.getString(i),Ranking.class);
+                mRankingNames.add(ranking);
             }
+
             //Notify the adapter
             rankingAdapter.notifyDataSetChanged();
         }

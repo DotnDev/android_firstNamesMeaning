@@ -263,7 +263,9 @@ public class MainActivity extends AppCompatActivity implements
                 break;
             case R.id.home_ranking_btn:
                 fragment = new RankingFragment();
-                openNewFragment(fragment);
+                Bundle bundle = new Bundle();
+                String url = Config.URL_GET_RANKING + "?token=" + token;
+                getData(url,fragment,bundle,"ranking");
                 break;
         }
 
