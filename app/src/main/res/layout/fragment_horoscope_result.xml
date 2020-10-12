@@ -260,6 +260,7 @@
             android:padding="@dimen/padding_small"
             android:textAlignment="center"
             android:gravity="center"
+            android:textSize="@dimen/text_title"
             />
 
         <ImageView
