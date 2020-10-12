@@ -152,10 +152,9 @@ public class MainActivity extends AppCompatActivity implements
                 submitSearch();
                 break;
             case R.id.app_bar_logo:
-                if (!(fragment instanceof HomeFragment)) {
                     fragment = new HomeFragment();
                     openNewFragment(fragment);
-                }
+
 
 
         }
