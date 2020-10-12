@@ -1,5 +1,8 @@
 package canovas.firstnamesmeanings.Config;
 
+/*
+ URLs to fetch data from PHP application
+ */
 public class Config {
 
     public static final String ANDROID_TOKEN = "t0k3n4SFPRApp";

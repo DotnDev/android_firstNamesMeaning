@@ -7,7 +7,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,7 +25,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
-
 import Models.FirstName;
 import canovas.firstnamesmeanings.Config.Config;
 import canovas.firstnamesmeanings.Fragment.CompatibilityFragment;
@@ -62,11 +60,6 @@ public class MainActivity extends AppCompatActivity implements
     ImageView submitSearch_imgView;
     ImageView appBar_logo_imgView;
 
-    Fragment selectedFragment = null;
-
-    public static String CURRENT_TAG;
-    private static final String TAG_HOME = "home";
-
     private SharedPreferences mSharedPreferences;
 
 
@@ -77,22 +70,18 @@ public class MainActivity extends AppCompatActivity implements
 
         mSharedPreferences = this.getApplicationContext().getSharedPreferences("userPrefs", 0);
 
-        //Click on app bar logo => back to home fragment
         appBar_logo_imgView = findViewById(R.id.app_bar_logo);
-        appBar_logo_imgView.setOnClickListener(this);
-
         toolBar = findViewById(R.id.toolbar_rl);
         searchBar = findViewById(R.id.searchbar_rl);
         searchInput = findViewById(R.id.search_input);
         submitSearch_imgView = findViewById(R.id.app_bar_search2);
 
+        appBar_logo_imgView.setOnClickListener(this);
         submitSearch_imgView.setOnClickListener(this);
 
         this.disableInput();
-
         this.setUpToolbar();
         this.setUpFragment(savedInstanceState);
-
         this.configureDrawerLayout();
         this.configureNavigationView();
 
@@ -104,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+    //Set up navigation drawer
     private void configureDrawerLayout() {
         this.drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -163,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    //Show search input and keyboard
     private void enableInput() {
 
         toolBar.setVisibility(View.GONE);
@@ -175,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+
+    //Hide search input and keyboard
     private void disableInput() {
 
         toolBar.setVisibility(View.VISIBLE);
@@ -223,10 +216,9 @@ public class MainActivity extends AppCompatActivity implements
     private void setUpFragment(Bundle savedInstanceState) {
 
         if (savedInstanceState == null) {
-            CURRENT_TAG = TAG_HOME;
-            selectedFragment = new HomeFragment();
+            fragment = new HomeFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.frame,
-                    selectedFragment).addToBackStack(null).commit();
+                    fragment).addToBackStack(null).commit();
         }
     }
 
@@ -311,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
 
+    //Submit name search
     private void submitSearch() {
         String query = searchInput.getText().toString();
         String url = Config.URL_GET_NAME + "?firstName=" + query + "&token=" + token;
@@ -325,8 +318,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onHoroscopeSubmit(String firstName, boolean saveName) {
 
-        //Search name in DB
-        //Launch new fragment with results
+        //Send the request and the fragment
         String url = Config.URL_GET_HOROSCOPE
                 + "?firstName=" + firstName
                 + "&token=" + token;
@@ -343,8 +335,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onCompatibilitySubmit(String name1, String name2) {
 
-        //Calculate score
-        //Open new fragment with results
+        //Send the request and the fragment
         String url = Config.URL_GET_COMPATIBILITY + "?firstName1=" + name1 + "&firstName2=" + name2 + "&token=" + token;
         CompatibilityResultFragment compatibilityResultFragment = new CompatibilityResultFragment();
 

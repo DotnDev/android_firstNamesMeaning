@@ -1,33 +1,27 @@
 package canovas.firstnamesmeanings.Adapter;
 
-import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-
-import Models.FirstName;
 import Models.Ranking;
-import canovas.firstnamesmeanings.Fragment.HoroscopeFragment;
-import canovas.firstnamesmeanings.Fragment.RankingFragment;
 import canovas.firstnamesmeanings.R;
+
+/*
+ The adapter for the RecyclerView on the Ranking Fragment
+ */
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder>{
 
     private ArrayList<Ranking> mRankingNames;
-    private Context mContext;
     private OnRankingNameClickListener mOnClickListener;
 
-    public RankingAdapter(ArrayList<Ranking> mRankingNames, Context mContext, OnRankingNameClickListener mOnClickListener){
+    public RankingAdapter(ArrayList<Ranking> mRankingNames, OnRankingNameClickListener mOnClickListener){
         this.mRankingNames = mRankingNames;
-        this.mContext = mContext;
         this.mOnClickListener = mOnClickListener;
     }
 
@@ -55,7 +49,6 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     }
 
     //Initiate the Views
-    //Static works?? if crash, remove
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView ranking_number_txtView;
         TextView ranking_name_txtView;
@@ -82,6 +75,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
         @Override
         public void onClick(View view) {
 
+            //Send the click event
             mOnClickListener.onRowClicked(getAdapterPosition());
 
         }
