@@ -27,21 +27,13 @@
             android:layout_height="wrap_content"
             android:textColor="@color/orange"
             android:textSize="@dimen/text_title"
-            android:text="@string/widget_name_day_title"
+            android:text="@string/home_title"
             />
         <TextView
             android:id="@+id/home_nameDay_date_txtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/widget_name_day_date"
-            android:textColor="@color/black"
-            />
-
-        <TextView
-            android:id="@+id/home_nameDay_name_txtView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/widget_name_day_name"
+            android:text="@string/home_text"
             android:textColor="@color/black"
             />
     </LinearLayout>

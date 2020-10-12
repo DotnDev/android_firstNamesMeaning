@@ -1,6 +1,7 @@
 package canovas.firstnamesmeanings.Activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,6 +27,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.Locale;
 
 import canovas.firstnamesmeanings.Config.Config;
 import canovas.firstnamesmeanings.Fragment.CompatibilityFragment;
@@ -348,18 +351,21 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     //Request to get data from PHP app
-    public void getData(String url, final Fragment fragment, final Bundle bundle,final String bundleName) {
+    public void getData(String url, final Fragment fragment, final Bundle bundle, final String bundleName) {
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 //Attach data to fragment
+                assert bundle != null;
                 bundle.putString(bundleName, response);
 
                 //Attach bundle to frag
+                assert fragment != null;
                 fragment.setArguments(bundle);
                 openNewFragment(fragment);
+
 
             }
         }, new Response.ErrorListener() {
@@ -372,7 +378,8 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
 
-        queue.add(request);
+            queue.add(request);
+
 
     }
 

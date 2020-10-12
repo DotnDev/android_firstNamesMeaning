@@ -37,10 +37,9 @@
     <string name="category_names">First Names</string>
 
 
-    <!-- NAME DAY -->
-    <string name="widget_name_day_title">One day, One name…</string>
-    <string name="widget_name_day_date">INSERT DATE HERE</string>
-    <string name="widget_name_day_name">Today we celebrate</string>
+    <!-- INTRO -->
+    <string name="home_title">Choosing a name is choosing a fate!</string>
+    <string name="home_text">Your first name can say a lot about your fate… What character traits are bound to it? What job will make a success of you? What influence will have your first name in your choices? Welcome in the universe of the first names and their meaning…</string>
 
 
     <!-- HOROSCOPE WIDGET -->
