@@ -64,7 +64,7 @@ public class RankingFragment extends Fragment implements View.OnClickListener, R
 
     private void setRecyclerView(View v) {
 
-        rankingAdapter = new RankingAdapter(mRankingNames, getActivity(), this);
+        rankingAdapter = new RankingAdapter(mRankingNames, this);
         RecyclerView recyclerview = v.findViewById(R.id.ranking_recyclerView);
         recyclerview.setHasFixedSize(false);
         recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
